@@ -1,1 +1,1 @@
-export { authType } from "./authType";
+export { authType } from './authType';
