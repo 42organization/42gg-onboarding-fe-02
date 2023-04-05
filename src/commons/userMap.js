@@ -4,21 +4,21 @@ export const userMap = new Map([
   [
     'red',
     {
-      password: 'qwe!@#123',
+      password: 'qwe123!@#',
       auth: authType.ADMIN,
     },
   ],
   [
     'blue',
     {
-      password: 'qwe!@#123',
+      password: 'qwe123!@#',
       auth: authType.MANAGER,
     },
   ],
   [
     'green',
     {
-      password: 'qwe!@#123',
+      password: 'qwe123!@#',
       auth: authType.NORMAL,
     },
   ],
