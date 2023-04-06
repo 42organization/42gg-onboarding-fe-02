@@ -1,7 +1,7 @@
 export const authType = {
-  PUBLIC: 'public',
-  NORMAL: 'normal',
-  MANAGER: 'manager',
-  ADMIN: 'admin',
+  PUBLIC: 1,
+  NORMAL: 2,
+  MANAGER: 3,
+  ADMIN: 4,
 };
 // TODO : Object.freeze(authType);

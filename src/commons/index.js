@@ -1,2 +1,2 @@
 export { routes } from './routes';
-export { userMap } from './userMap';
+export { userList } from './userList';
