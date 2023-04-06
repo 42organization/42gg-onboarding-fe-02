@@ -17,7 +17,7 @@ export const handlers = [
     return res(
       ctx.status(200),
       ctx.cookie('auth-token', token),
-      ctx.json({ username: user.username, auth: user.auth })
+      ctx.json({ username: user.username, role: user.role })
     );
   }),
 

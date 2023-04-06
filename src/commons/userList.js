@@ -1,22 +1,22 @@
-import { authType } from '../types';
+import { roleType } from '../types';
 
 export const userList = [
   {
     username: 'red',
     password: 'qwe123!@#',
     token: '',
-    auth: authType.ADMIN,
+    role: roleType.ADMIN,
   },
   {
     username: 'blue',
     password: 'qwe123!@#',
     token: '',
-    auth: authType.MANAGER,
+    role: roleType.MANAGER,
   },
   {
     username: 'green',
     password: 'qwe123!@#',
     token: '',
-    auth: authType.NORMAL,
+    role: roleType.NORMAL,
   },
 ];
