@@ -4,6 +4,7 @@ import { userState } from '../utils/user';
 
 export function RouteWithAuth({ role }) {
   const user = useRecoilValue(userState);
+  // TODO : url에 직접 접근하는 경우에 user가 없어진다.
   if (!user) {
     return <Navigate to='/login' />;
   }

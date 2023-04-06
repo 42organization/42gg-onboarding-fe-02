@@ -1,2 +1,2 @@
-export { authType } from './authType';
+export { roleType } from './roleType';
 export { loginResultType } from './loginResultType';
