@@ -9,11 +9,11 @@ export function Router() {
     <BrowserRouter>
       <Routes>
         <Route element={<DefaultLayout />}>
-          {routes.map(({ path, name, element, role }) =>
-            role === roleType.PUBLIC ? (
+          {routes.map(({ path, name, element, auth }) =>
+            auth === roleType.PUBLIC ? (
               <Route key={name} path={path} element={element} />
             ) : (
-              <Route key={name} element={<RouteWithAuth role={role} />}>
+              <Route key={name} element={<RouteWithAuth auth={auth} />}>
                 <Route path={path} element={element} />
               </Route>
             )
