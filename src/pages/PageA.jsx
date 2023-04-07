@@ -1,7 +1,9 @@
 export function PageA() {
   return (
     <div>
-      <h1>PageA</h1>
+      <p>This is</p>
+      <p>Normal A</p>
+      <p>page</p>
     </div>
   );
 }

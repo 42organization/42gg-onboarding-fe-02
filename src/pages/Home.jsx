@@ -3,7 +3,9 @@ import { logout } from '../utils/login';
 export function Home() {
   return (
     <div>
-      <h1>Home</h1>
+      <p>This is</p>
+      <p>Home</p>
+      <p>page</p>
     </div>
   );
 }
