@@ -7,9 +7,13 @@
 
 .bodyWrapper {
   @include flex-center;
-  margin: 0 auto;
+  width: $body-width;
+  height: $body-height;
   font-size: $middle-font-size;
   color: $smoke-blue;
+  position: absolute;
+  bottom: 0;
+  right: 0;
   text-align: center;
   p {
     margin: 0;
