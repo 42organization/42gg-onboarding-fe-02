@@ -1,0 +1,27 @@
+@import './common.scss';
+
+@font-face {
+  font-family: 'Poor Story';
+  src: url('../fonts/PoorStory-Regular.ttf');
+}
+
+* {
+  box-sizing: border-box;
+  font-family: $default-font;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: $smoke-white;
+}
+
+button {
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
