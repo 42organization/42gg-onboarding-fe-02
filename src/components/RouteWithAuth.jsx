@@ -5,8 +5,6 @@ import { useUser } from '../utils/useUser';
 export function RouteWithAuth({ auth }) {
   const { user, loading, error } = useUser();
 
-  console.log('**', user, loading, error, '**');
-
   if (error) {
     // 로그인이 안된 것이므로 로그인 페이지로 이동
     return <Navigate to='/login' />;

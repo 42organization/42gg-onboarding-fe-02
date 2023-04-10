@@ -15,7 +15,6 @@ export function useUser() {
         const user = await res.json();
         setUser(user);
       } catch (e) {
-        console.log(e);
         setError(true);
       } finally {
         setLoading(false);
@@ -24,7 +23,5 @@ export function useUser() {
     if (user) return;
     loadUser();
   }, [user]);
-
-  console.log('//', user, loading, error, '//');
   return { user, loading, error };
 }

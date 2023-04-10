@@ -17,7 +17,6 @@ export const handlers = [
      * - js파일 내 객체에 저장해두면 refresh시에 초기화됨.
      * - 토큰을 localStorage에 저장하면 refresh시에도 유지되지만, 보안상의 문제가 있음.
      */
-    console.log('handler: userList', userList);
     return res(
       ctx.status(200),
       ctx.cookie('auth-token', user.token),
@@ -36,10 +35,7 @@ export const handlers = [
 
   rest.get('/user', async (req, res, ctx) => {
     const token = req.cookies['auth-token']; // 요청 헤더의 auth-token
-    console.log('handler: token', token);
-    console.log('handler: userList', userList);
     const user = userList.find((user) => user.token === token); // userList에서 토큰에 해당하는 user를 가져옴
-    console.log('handler: user', user);
     if (!user) {
       return res(ctx.status(401));
     }
