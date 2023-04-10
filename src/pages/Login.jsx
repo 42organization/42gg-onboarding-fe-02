@@ -3,6 +3,8 @@ import { loginResultType } from '../types';
 import { useRoute } from '../utils/useRoute';
 import { useSetRecoilState } from 'recoil';
 import { userState } from '../utils/user';
+import style from '../styles/login.module.scss';
+import { FaUser, FaLock } from 'react-icons/fa';
 
 export function Login() {
   const { router } = useRoute();
@@ -24,17 +26,18 @@ export function Login() {
   }
 
   return (
-    <div>
-      <form onSubmit={loginSubmitHandler}>
-        <label>
-          username
-          <input type='text' name='username' />
-        </label>
-        <label>
-          password
-          <input type='password' name='password' />
-        </label>
-        <button type='submit'>Login</button>
+    <div className={style.wrapper}>
+      <h1 className={style.title}>Login</h1>
+      <form onSubmit={loginSubmitHandler} className={style.formWrapper}>
+        <div className={style.inputWrapper}>
+          <FaUser />
+          <input type='text' name='username' placeholder='username' />
+        </div>
+        <div className={style.inputWrapper}>
+          <FaLock />
+          <input type='password' name='password' placeholder='password' />
+        </div>
+        <button type='submit'>Enter</button>
       </form>
     </div>
   );
