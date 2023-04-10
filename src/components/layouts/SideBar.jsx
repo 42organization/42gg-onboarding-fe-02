@@ -1,12 +1,11 @@
 import { Link } from 'react-router-dom';
 import { sidebarContent } from '../../commons/sidebarContent';
-import { useRecoilValue } from 'recoil';
-import { userState } from '../../utils/user';
 import { useRoute } from '../../utils/useRoute';
+import { useUser } from '../../utils/useUser';
 import styles from '../../styles/sidebar.module.scss';
 
 export function Sidebar() {
-  const user = useRecoilValue(userState);
+  const { user } = useUser();
   const { currentPath } = useRoute();
   if (!user) {
     return <></>;

@@ -1,14 +1,11 @@
 import { login } from '../utils/login';
 import { loginResultType } from '../types';
 import { useRoute } from '../utils/useRoute';
-import { useSetRecoilState } from 'recoil';
-import { userState } from '../utils/user';
 import style from '../styles/login.module.scss';
 import { FaUser, FaLock } from 'react-icons/fa';
 
 export function Login() {
   const { router } = useRoute();
-  const setUser = useSetRecoilState(userState);
 
   async function loginSubmitHandler(event) {
     event.preventDefault();
@@ -17,7 +14,6 @@ export function Login() {
     const password = formData.get('password');
     const loginRes = await login(username, password);
     if (loginRes.res === loginResultType.SUCCESS) {
-      setUser(loginRes.data);
       router('/');
       return;
     }
