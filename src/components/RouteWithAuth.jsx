@@ -1,14 +1,22 @@
 import { Navigate, Outlet } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
-import { userState } from '../utils/user';
+import { useUser } from '../utils/useUser';
 
 export function RouteWithAuth({ auth }) {
-  const user = useRecoilValue(userState);
-  // TODO : url에 직접 접근하는 경우에 user가 없어진다.
-  if (!user) {
+  const { user, loading, error } = useUser();
+
+  console.log('**', user, loading, error, '**');
+
+  if (error) {
+    // 로그인이 안된 것이므로 로그인 페이지로 이동
     return <Navigate to='/login' />;
   }
+  if (loading) {
+    // 로딩중이면 아무것도 안함
+    return <></>;
+  }
   if (user.role < auth) {
+    // 권한이 없는 경우
     return <Navigate to='/' />;
   }
   return <Outlet />;
