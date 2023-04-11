@@ -19,3 +19,14 @@
     margin: 0;
   }
 }
+
+.publicWrapper {
+  @include flex-center;
+  width: 100vw;
+  font-size: $middle-font-size;
+  color: $smoke-blue;
+  text-align: center;
+  p {
+    margin: 0;
+  }
+}
