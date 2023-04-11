@@ -1,0 +1,26 @@
+{
+    "normal": [{
+        "id": "tom",
+        "pw": "tom123"
+    },
+    {
+        "id": "paul",
+        "pw": "paul123"
+    }],
+    "admin":[{
+        "id": "chris",
+        "pw": "chris123"
+    },
+    {
+        "id": "oliver",
+        "pw": "oliver123"
+    }],
+    "manager":[{
+        "id": "eric",
+        "pw": "eric123"
+    },
+    {
+        "id": "kyle",
+        "pw": "kyle123"
+    }]
+}
