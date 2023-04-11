@@ -1,5 +1,4 @@
 import { Navigate, Outlet } from 'react-router-dom';
-import { useRecoilValue } from 'recoil';
 import { useUser } from '../utils/useUser';
 
 export function RouteWithAuth({ auth }) {
