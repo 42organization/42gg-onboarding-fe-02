@@ -3,6 +3,7 @@ import { loginResultType } from '../types';
 import { useRoute } from '../utils/useRoute';
 import style from '../styles/login.module.scss';
 import { FaUser, FaLock } from 'react-icons/fa';
+import { toast } from 'react-hot-toast';
 
 export function Login() {
   const { router } = useRoute();
@@ -17,7 +18,7 @@ export function Login() {
       router('/');
       return;
     }
-    // TODO : 로그인 실패시 토스트 메시지 띄우기
+    toast(loginRes.data.msg, { type: 'error' });
     return;
   }
 

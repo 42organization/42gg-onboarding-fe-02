@@ -19,7 +19,7 @@ export const login = async (username, password) => {
   }
   return {
     res: loginResultType.FAIL,
-    data: null,
+    data: await loginRes.json(),
   };
 };
 

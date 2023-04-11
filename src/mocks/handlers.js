@@ -6,8 +6,14 @@ export const handlers = [
   rest.post('/login', async (req, res, ctx) => {
     const { username, password } = await req.json(); // 요청 body의 username과 password
     const user = userList.find((user) => user.username === username); // userList에서 username에 해당하는 user를 가져옴
-    if (!user || user.password !== password) {
-      return res(ctx.status(401));
+    if (!user) {
+      return res(
+        ctx.status(401),
+        ctx.json({ msg: '존재하지 않는 사용자입니다.' })
+      );
+    }
+    if (user.password !== password) {
+      return res(ctx.status(401), ctx.json({ msg: '잘못된 비밀번호입니다.' }));
     }
     // const token = `${username}-${v1()}`; // 토큰 생성
     // user.token = token; // userList에 토큰 저장
@@ -20,7 +26,7 @@ export const handlers = [
     return res(
       ctx.status(200),
       ctx.cookie('auth-token', user.token),
-      ctx.json({ username: user.username, role: user.role })
+      ctx.json({ msg: '로그인 성공.' })
     );
   }),
 

@@ -1,19 +1,27 @@
 import { Navigate, Outlet } from 'react-router-dom';
+import { toast } from 'react-hot-toast';
 import { useUser } from '../utils/useUser';
+import { useEffect } from 'react';
 
 export function RouteWithAuth({ auth }) {
   const { user, loading, error } = useUser();
 
+  useEffect(() => {
+    if (error) {
+      toast('로그인이 필요한 페이지입니다.', { type: 'error' });
+    }
+    if (user && user.role < auth) {
+      toast('권한이 없는 페이지입니다.', { type: 'error' });
+    }
+  }, [error, user]);
+
   if (error) {
-    // 로그인이 안된 것이므로 로그인 페이지로 이동
     return <Navigate to='/login' />;
   }
   if (loading) {
-    // 로딩중이면 아무것도 안함
     return <></>;
   }
   if (user.role < auth) {
-    // 권한이 없는 경우
     return <Navigate to='/' />;
   }
   return <Outlet />;
