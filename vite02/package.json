@@ -9,11 +9,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "crypto-js": "^4.1.1",
+    "node-sass": "^8.0.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-query": "^3.39.3",
-    "react-router-dom": "^6.10.0"
+    "react-router-dom": "^6.10.0",
+    "recoil-persist": "^4.2.0",
+    "sass-loader": "^13.2.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
@@ -27,6 +31,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "msw": "^1.2.1",
     "prettier": "^2.8.7",
+    "sass": "^1.62.0",
     "vite": "^4.2.0"
   },
   "format": "prettier --write --cache .",

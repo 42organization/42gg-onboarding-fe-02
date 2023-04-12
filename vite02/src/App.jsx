@@ -1,28 +1,49 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
-import MainPage from './component/page/MainPage';
-import NormalLoginPage from './component/page/LoginPage/NormalLoginPage';
-import AdminLoginPage from './component/page/LoginPage/AdminLoginPage';
-import ManagerLoginPage from './component/page/LoginPage/MangerLoginPage';
-import NormalPage from './component/page/UserPage/NormalPage';
-import AdminPage from './component/page/UserPage/AdminPage';
-import ManagerPage from './component/page/UserPage/ManagerPage';
+import MainPage from './page/MainPage';
+import { NormalLoginPage, ManagerLoginPage, AdminLoginPage } from './page/LoginPage';
+import NormalPage from './page/UserPage/NormalPage';
+import AdminPage from './page/UserPage/AdminPage';
+import ManagerPage from './page/UserPage/ManagerPage';
+import { RouteMain, RouteNormal, RouteManager, RouteAdmin } from './component/utils/AuthRoute';
+import { RecoilRoot } from 'recoil';
 
 
 function App() {
 
   return (
     <div className="App">
-      <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/normalLogin" element={<NormalLoginPage />} />
-        <Route path="/adminLogin" element={<AdminLoginPage />} />
-        <Route path="/managerLogin" element={<ManagerLoginPage />} />
-        <Route path="/normal" element={<NormalPage />} />
-        <Route path="/admin" element={<AdminPage />} />
-        <Route path="/manager" element={<ManagerPage />} />
-      </Routes>
+      <RecoilRoot>
+        <Routes>
+
+          <Route element={<RouteMain />}>
+            <Route path="/" element={<MainPage />} />
+            <Route path="/normal/Login" element={<NormalLoginPage />} />
+            <Route path="/admin/Login" element={<AdminLoginPage />} />
+            <Route path="/manager/Login" element={<ManagerLoginPage />} />
+          </Route>
+
+
+
+
+          <Route element={<RouteNormal />}>
+            <Route path="/normal/home" element={<NormalPage/>}/>
+          </Route>
+
+          <Route element={<RouteManager/>}>
+            <Route path="/manager/home" element={<ManagerPage/>}/>
+          </Route>
+          
+          <Route element={<RouteAdmin />}>
+            <Route path="/admin/home" element={<AdminPage/>}/>
+          </Route>
+
+
+          
+
+        </Routes>
+      </RecoilRoot>
     </div>
   )
 }

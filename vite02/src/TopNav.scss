@@ -1,0 +1,44 @@
+header {
+    background-color: black;
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100vw;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    
+    h1 {
+        padding: 0.5rem;
+        width: 10vw;
+        color: white;
+        font-size: 2rem;
+    }
+    
+    .navBar {
+        top: 0;
+        width: 60vw;
+        height: 15vh;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        background-color: black;
+        font-size: 1.2rem;
+        font-weight: bold;
+        div {
+            &:hover {
+                transform: scale(1.2);
+                }
+            }
+        }
+
+    .logoutBtn {
+        top: 0;
+        right: 0;
+        width: 10vw;
+    }
+}

@@ -1,15 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function AdminPage() {
+function GoMain() {
     return (
         <div>
             <Link to="/">
-
-            로그아웃
+                메인화면으로 돌아가기
             </Link>
         </div>
     )
 }
 
-export default AdminPage;
+export default GoMain;

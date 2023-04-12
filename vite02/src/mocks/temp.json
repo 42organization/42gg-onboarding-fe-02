@@ -1,26 +1,26 @@
 {
     "normal": [{
-        "id": "tom",
-        "pw": "tom123"
+        "id": "normal",
+        "pw": "normal"
     },
     {
-        "id": "paul",
-        "pw": "paul123"
-    }],
-    "admin":[{
-        "id": "chris",
-        "pw": "chris123"
-    },
-    {
-        "id": "oliver",
-        "pw": "oliver123"
+        "id": "normal1",
+        "pw": "normal1"
     }],
     "manager":[{
-        "id": "eric",
-        "pw": "eric123"
+        "id": "manager",
+        "pw": "manager"
     },
     {
-        "id": "kyle",
-        "pw": "kyle123"
+        "id": "manager1",
+        "pw": "manager1"
+    }],
+    "admin":[{
+        "id": "admin",
+        "pw": "admin"
+    },
+    {
+        "id": "admin1",
+        "pw": "admin1"
     }]
 }
