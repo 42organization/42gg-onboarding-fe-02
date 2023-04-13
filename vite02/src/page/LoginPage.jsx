@@ -1,7 +1,7 @@
 import React from "react";
-import AdminLoginInput from "../component/ui/LoginInput/AdminLoginInput";
-import ManagerLoginInput from "../component/ui/LoginInput/ManagerLoginInput";
-import NormalLoginInput from "../component/ui/LoginInput/NormalLoginInput";
+import AdminLoginInput from "../component/ui/logininput/AdminLoginInput";
+import ManagerLoginInput from "../component/ui/logininput/ManagerLoginInput";
+import NormalLoginInput from "../component/ui/logininput/NormalLoginInput";
 import GoMain from "../component/utils/GoMain";
 
 export function NormalLoginPage () {

@@ -3,31 +3,29 @@ header {
     top: 0;
     left: 0;
     position: fixed;
-    width: 100vw;
-    height: 15vh;
+    width: 100vmax;
+    height: 15%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
 
     
     h1 {
         padding: 0.5rem;
-        width: 10vw;
+        width: 10vmax;
         color: white;
-        font-size: 2rem;
+        font-size: 3vmax;
     }
     
     .navBar {
         top: 0;
-        width: 60vw;
-        height: 15vh;
+        width: 60vmax;
+        height: 15%;
         display: flex;
-        flex-wrap: wrap;
         justify-content: space-around;
         align-items: center;
         background-color: black;
-        font-size: 1.2rem;
+        font-size: 1.5vmax;
         font-weight: bold;
         div {
             &:hover {
@@ -39,6 +37,6 @@ header {
     .logoutBtn {
         top: 0;
         right: 0;
-        width: 10vw;
+        width: 10vmax;
     }
 }

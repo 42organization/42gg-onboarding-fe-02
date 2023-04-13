@@ -3,9 +3,9 @@ import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import MainPage from './page/MainPage';
 import { NormalLoginPage, ManagerLoginPage, AdminLoginPage } from './page/LoginPage';
-import NormalPage from './page/UserPage/NormalPage';
-import AdminPage from './page/UserPage/AdminPage';
-import ManagerPage from './page/UserPage/ManagerPage';
+import NormalPage from './page/normal/NormalPage';
+import ManagerPage from './page/manager/ManagerPage';
+import AdminPage from './page/admin/AdminPage';
 import { RouteMain, RouteNormal, RouteManager, RouteAdmin } from './component/utils/AuthRoute';
 import { RecoilRoot } from 'recoil';
 
