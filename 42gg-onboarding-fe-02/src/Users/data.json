@@ -1,0 +1,22 @@
+{
+    "users": [
+      {
+        "email": "park",
+        "password": "123",
+        "authority": "1",
+        "name": "parksangmin"
+      },
+      {
+        "email": "sang",
+        "password": "123",
+        "authority": "2",
+        "name": "parksangmin"
+      },
+      {
+        "email": "min",
+        "password": "123",
+        "authority": "3",
+        "name": "parksangmin"
+      }
+    ]
+  }
