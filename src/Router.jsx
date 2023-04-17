@@ -14,8 +14,8 @@ export function Router() {
               <Route path={path} element={element} />
             </Route>
           ) : (
-            <Route key={name} element={<DefaultLayout />}>
-              <Route element={<RouteWithAuth auth={auth} />}>
+            <Route key={name} element={<RouteWithAuth auth={auth} />}>
+              <Route element={<DefaultLayout />}>
                 <Route path={path} element={element} />
               </Route>
             </Route>
