@@ -11,8 +11,15 @@ export function useUser() {
   useEffect(() => {
     async function fetchUser() {
       try {
-        const res = await fetch('/user');
-        if (!res.ok) throw new Error('Failed to load user');
+        const res = await fetch('/user', {
+          method: 'GET',
+          headers: {
+            credentials: 'include',
+          },
+        });
+        if (!res.ok) {
+          throw new Error('Failed to load user');
+        }
         const user = await res.json();
         setUser(user);
         setLoading(false);
@@ -21,7 +28,9 @@ export function useUser() {
         setLoading(false);
       }
     }
-    if (user) return;
+    if (user) {
+      return;
+    }
     fetchUser();
   }, [user]);
   return { user, loading, error, resetUser };
