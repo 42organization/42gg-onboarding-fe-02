@@ -21,7 +21,7 @@ export const handlers = [
     );
   }),
 
-  rest.post('/logout', async (req, res, ctx) => {
+  rest.post('/logout', (req, res, ctx) => {
     const token = req.cookies['auth-token']; // 요청 헤더의 auth-token
     const user = userList.find((user) => user.token === token); // userList에서 토큰에 해당하는 user를 가져옴
     if (!user) {
@@ -30,7 +30,7 @@ export const handlers = [
     return res(ctx.status(200), ctx.cookie('auth-token', ''));
   }),
 
-  rest.get('/user', async (req, res, ctx) => {
+  rest.get('/user', (req, res, ctx) => {
     const token = req.cookies['auth-token']; // 요청 헤더의 auth-token
     const user = userList.find((user) => user.token === token); // userList에서 토큰에 해당하는 user를 가져옴
     if (!user) {
