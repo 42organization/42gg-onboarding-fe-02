@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import styles from "./scss/style.module.scss";
+//import styles from "./scss/style.module.scss";
 import LogoutButton from './page/LogoutButton';
 /* import styled from 'styled-components';
 
@@ -25,7 +25,7 @@ const Right = styled.div`
 function Sidebar() {
 
 	return (
-		<div className={styles.SidebarWrap}>
+		<div>
 			<Link to="/about">
 				<button>About</button>
 			</Link>

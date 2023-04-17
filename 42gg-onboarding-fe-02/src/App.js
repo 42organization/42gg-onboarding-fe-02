@@ -11,6 +11,8 @@ import authAtom from './auth/authatom';
 import RoutingPage from './page/RoutingPage';
 import styles from './scss/App.module.scss';
 import NomalPage from './page/NomalPage';
+import Container from '@mui/material/Container';
+
 /* import styled from 'styled-components';
 
 const AppWrep = styled.div`
@@ -40,10 +42,12 @@ function App() {
 	return (
 		<div className={styles.AppWrep}>
 		<Router>
-			<Routes>
-				<Route path="/login" element={<LoginForm />} />
-				<Route path="/*" element={<RoutingPage Component={Mainpage} />} />
-			</Routes>
+			<Container fixed>
+				<Routes>
+					<Route path="/login" element={<LoginForm />} />
+					<Route path="/*" element={<RoutingPage Component={Mainpage} />} />
+				</Routes>
+			</Container>
 		</Router>
 		</div>
 	);

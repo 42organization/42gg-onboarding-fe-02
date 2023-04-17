@@ -7,11 +7,13 @@ import Users from "./Users";
 import LoginForm from './page/LoginForm';
 import Profile from './page/Profile';
 import LogoutButton from './page/LogoutButton';
-import { useRecoilValue } from 'recoil';
 import PrivateRoute from './auth/PrivateRoute';
 import Sidebar from './Sidebar';
+import Button from '@mui/material/Button';
+import ButtonGroup from '@mui/material/ButtonGroup';
+import Grid from '@mui/material/Grid';
+
 //import { useRecoilState } from 'recoil';
-import authAtoms from './auth/authatom';
 /* import styled from 'styled-components';
 
 const MainWrep = styled.div`
@@ -24,42 +26,38 @@ const MainWrep = styled.div`
 	wdith: calc(100% - 200px);
 	margin-left: 200px;
 ` */
-
-function MainPage() {
-	const auth = useRecoilValue(authAtoms)
-	//const [auth,  = useRecoilState(authAtoms)
-
-	console.log("Main:"+auth);
-	const authFromLocalStorage = JSON.parse(localStorage.getItem('auth'));
-	if (!authFromLocalStorage)
-		return <Navigate to='/login' />;
-
-	const users = () => {
-		return <Users />;
-	};
-
+function Header() {
 	return (
-		<div className='MainWrep'>
-		<div className='ContentWrapper'>
-		<Sidebar />
+		<header>
 		<nav>
+			<ButtonGroup>
 				<Link to="/">
-					<button>Bookjeok Bookjeok</button>
+					<Button>Bookjeok Bookjeok</Button>
 				</Link>
 				<Link to="/about">
-					<button>About</button>
+					<Button>About</Button>
 				</Link>
 				<Link to="/users">
-					<button>Users</button>
+					<Button>Users</Button>
 				</Link>
 				<Link to="/Profile">
-					<button>Profile</button>
+					<Button>Profile</Button>
 				</Link>
 				<Link to="/Login">
 						<LogoutButton />
 				</Link>
+			</ButtonGroup>
 		</nav>
-			<hr />
+		</header>
+	);
+}
+
+function Body() {
+	const users = () => {
+		return <Users />;
+	};
+	return (
+		<body>
 			<div>
 				<Routes>
 					<Route path="/*" element={<Home />} />
@@ -70,7 +68,33 @@ function MainPage() {
 					<Route path="*" element={<NotFound />} />
 				</Routes>
 			</div>
-		</div>
+			</body>
+	)
+}
+
+
+function MainPage() {
+	const authFromLocalStorage = JSON.parse(localStorage.getItem('auth'));
+	if (!authFromLocalStorage)
+		return <Navigate to='/login' />;
+
+	return (
+		<div className='MainWrep'>
+			<div className='ContentWrapper'>
+				<Header />
+				<hr />
+				<Grid Container>
+					<Grid item xs="8">
+						<Sidebar></Sidebar>
+					</Grid>
+					<Grid item xs="4" container
+  direction="column"
+  justifyContent="center"
+  alignItems="center">
+						<Body></Body>
+					</Grid>
+				</Grid>
+			</div>
 		</div>
 	);
 }

@@ -11,13 +11,13 @@ function UserList() {
 		<>
 			<h1>Users</h1>
 			<h2>User List</h2>
-			<ul>
+			<ol>
 				{user.map(( users ) => (
 					<li key={users.email}>
 						<Link to="user/${users.email}" >{users.email}</Link>
 					</li>
 				))}
-			</ul>
+			</ol>
 		</>
 	);
 }
