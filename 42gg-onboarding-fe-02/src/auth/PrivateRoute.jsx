@@ -7,14 +7,14 @@ import authAtom from "./authatom";
 function PrivateRoute({ Component}) {
 	const [component, setComponent ] = useState(null);
 	const auth = useRecoilValue(authAtom);
-
 	const Navigate = useNavigate();
+
 	useEffect(() => {
-		if (auth === "3") {
-			alert('접근 권한이 없습니다.');
+		if (auth === "2") {
+			alert('접근 권한이 없습니다. :P');
 			Navigate('/');
 		} else {
-			setComponent(Component(auth));
+			setComponent(Component());
 		}
 	}, []);
 	return component;

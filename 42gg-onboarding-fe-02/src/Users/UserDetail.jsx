@@ -1,20 +1,24 @@
 import React from "react";
 import data from "./data.json";
-import {useNavigate} from 'react-router-dom';
+import {useNavigate, useLocation} from 'react-router-dom';
 
-function UserDetail(username) {
+function UserDetail() {
 	const navigate = useNavigate();
-	
-	const user = data.find((users) => 
-		users.email == username.email
+	const location= useLocation();
+
+	const username=location.state;
+	const userss = data.users;
+	const user = userss.find((users) =>
+		users.email == username
 	);
+	console.log(userss);
 	return (
 		<>
 			<h2>User Detail</h2>
 			<dt>email</dt>
-			<dd>{user.email}</dd>
+			<dd>{user}</dd>
 			<dt>name</dt>
-			<dd>{user.name}</dd>
+			<dd>{user}</dd>
 			<button onClick={() => navigate(-1)}>Back</button>
 		</>
 	);

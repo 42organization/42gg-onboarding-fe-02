@@ -1,17 +1,16 @@
 import React from 'react';
 import { Link, Navigate, Route, Routes} from "react-router-dom";
-import Home from "./page/Home";
-import About from "./page/About";
-import NotFound from "./page/NotFound";
-import Users from "./Users";
-import LoginForm from './page/LoginForm';
-import Profile from './page/Profile';
-import LogoutButton from './page/LogoutButton';
+import Home from "./Home";
+import About from "./About";
+import NotFound from "./NotFound";
+import LoginForm from './LoginForm';
+import Profile from './Profile';
+import LogoutButton from './LogoutButton';
 import { useRecoilValue } from 'recoil';
-import PrivateRoute from './auth/PrivateRoute';
-import Sidebar from './Sidebar';
+import PrivateRoute from '../auth/PrivateRoute';
+import Sidebar from '../Sidebar';
 //import { useRecoilState } from 'recoil';
-import authAtoms from './auth/authatom';
+import authAtoms from '../auth/authatom';
 /* import styled from 'styled-components';
 
 const MainWrep = styled.div`
@@ -29,28 +28,25 @@ function MainPage() {
 	const auth = useRecoilValue(authAtoms)
 	//const [auth,  = useRecoilState(authAtoms)
 
-	console.log("Main:"+auth);
+	console.log("Nimal:"+auth);
 	const authFromLocalStorage = JSON.parse(localStorage.getItem('auth'));
 	if (!authFromLocalStorage)
 		return <Navigate to='/login' />;
-
-	const users = () => {
-		return <Users />;
+	
+	const profile = () => {
+		return <Profile user={auth} />;
 	};
 
 	return (
 		<div className='MainWrep'>
 		<div className='ContentWrapper'>
-		<Sidebar />
+		<Sidebar/>
 		<nav>
 				<Link to="/">
 					<button>Bookjeok Bookjeok</button>
 				</Link>
 				<Link to="/about">
 					<button>About</button>
-				</Link>
-				<Link to="/users">
-					<button>Users</button>
 				</Link>
 				<Link to="/Profile">
 					<button>Profile</button>
@@ -61,13 +57,13 @@ function MainPage() {
 		</nav>
 			<hr />
 			<div>
+
 				<Routes>
 					<Route path="/*" element={<Home />} />
 					<Route path="/about" element={<About />} />
-					<Route path="/users/*" element={<PrivateRoute Component={users} />} />
-					<Route path="/profile" element={<Profile />} />
+					<Route path="/profile" element={<PrivateRoute Component={profile} />} />
 					<Route path="/login" element={<LoginForm />}/>
-					<Route path="*" element={<NotFound />} />
+					<Route path="*" element={NotFound()} />
 				</Routes>
 			</div>
 		</div>

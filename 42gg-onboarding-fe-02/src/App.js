@@ -8,7 +8,9 @@ import LoginForm from './page/LoginForm';
 import { useEffect } from 'react';
 import { useRecoilState } from 'recoil';
 import authAtom from './auth/authatom';
-import './scss/App.module.scss';
+import RoutingPage from './page/RoutingPage';
+import styles from './scss/App.module.scss';
+import NomalPage from './page/NomalPage';
 /* import styled from 'styled-components';
 
 const AppWrep = styled.div`
@@ -17,7 +19,6 @@ const AppWrep = styled.div`
 
 function App() {
 	const [auth, setAuth] = useRecoilState(authAtom);
-	//const Navigate = Navigate();
 
 	useEffect(() => {
 		const authFromLocalStorage = JSON.parse(localStorage.getItem('auth'));
@@ -25,16 +26,23 @@ function App() {
 		{
 			setAuth(authFromLocalStorage);
 			console.log(auth);
-			//Navigate('/')
 		}
 	}, [setAuth]);
 
+	const Mainpage = () => {
+		const authFromLocalStorage = JSON.parse(localStorage.getItem('auth'));
+		if (authFromLocalStorage === "1" || authFromLocalStorage === "2")
+			return <MainPage />;
+		else 
+			return <NomalPage />;
+	}
+
 	return (
-		<div className="AppWrep">
+		<div className={styles.AppWrep}>
 		<Router>
 			<Routes>
 				<Route path="/login" element={<LoginForm />} />
-				<Route path="/*" element={<MainPage />} />
+				<Route path="/*" element={<RoutingPage Component={Mainpage} />} />
 			</Routes>
 		</Router>
 		</div>

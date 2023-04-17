@@ -11,8 +11,6 @@ function LoginForm() {
 	const Navigate = useNavigate();
 	const [auth, setAuth] = useRecoilState(authAtom);
 
-	//if (auth)
-	//	return Navigate('/');
 	console.log("loginform:"+auth);
 	const handleLogin = (event) => {
 		event.preventDefault();
@@ -22,8 +20,11 @@ function LoginForm() {
 			if (user) {
 				setAuth(user.authority);
 				localStorage.setItem('auth', JSON.stringify(user.authority));
+				localStorage.setItem('email', JSON.stringify(user.email));
+				localStorage.setItem('password', JSON.stringify(user.password));
+				localStorage.setItem('name', JSON.stringify(user.name));
 				//if (user.authority === "1")
-					Navigate('/');
+				Navigate('/');
 			}
 			else
 				throw null;
