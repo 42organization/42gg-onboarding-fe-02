@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { isManager } from "../../LoginAtom";
+import { isNormal, isManager, isAdmin } from "../LoginAtom";
 import { useSetRecoilState } from "recoil";
 import { useNavigate } from "react-router-dom";
 import { 
@@ -8,32 +8,61 @@ import {
     Button
 } from "@mui/material";
 
-function ManagerLoginInput() {
+function LoginInput() {
     const userId = useRef();
     const userPw = useRef();
+    const setIsNormal = useSetRecoilState(isNormal);
     const setIsManager = useSetRecoilState(isManager);
+    const setIsAdmin = useSetRecoilState(isAdmin);
     const navigate = useNavigate();
 
     const getUser = async (URL) => {
-        const res = (await fetch(URL)).json();
-        return res;
+        const res = await fetch(URL);
+        const data = await res.json();
+        return data;
     }
     const users = getUser("/userInfo");
-
+    
     const validId = (id, pw) => {
         users.then((value) => {
-            value.manager.map((exist) => {if (id === exist.id && pw === exist.pw) {
-                setIsManager(true);
-                navigate("/manager");
-            }}
-        )}
-    )}
+            const normalUser = value.normal;
+            const managerUser = value.manager;
+            const adminUser = value.admin;
+
+            let found = false;
+
+            normalUser.forEach((exist) => {
+                if (id === exist.id && pw === exist.pw) {
+                    setIsNormal(true);
+                    found = true;
+                    navigate("/home");
+                }
+            })
+            managerUser.forEach((exist) => {
+                if (id === exist.id && pw === exist.pw) {
+                    setIsManager(true);
+                    found = true;
+                    navigate("/home");
+                }
+            })
+            adminUser.forEach((exist) => {
+                if (id === exist.id && pw === exist.pw) {
+                    setIsAdmin(true);
+                    found = true;
+                    navigate("/home");
+                }
+            if (found === false) {
+                alert("존재하지 않는 회원입니다.");
+            }
+            })
+        })
+    }
 
     const curVal = (user) => {
         return (user.current.value);
     }
 
-    const fillIdPw = (userId, userPw) => {
+    const fillIdPw = () => {
         if (curVal(userId) === "") {
             alert("아이디를 입력하세요.");
         } else if (curVal(userPw) === "") {
@@ -45,10 +74,9 @@ function ManagerLoginInput() {
         if (curVal(userId) === "" || curVal(userPw) === "") {
             fillIdPw();
         } else {
-            validId(curVal(userId), curVal(userPw))
-            
-            }
+            validId(curVal(userId), curVal(userPw));
         }
+    }
 
     const keyUpCheckInput = (e) => {
         if (e.key === 'Enter') {
@@ -72,4 +100,4 @@ function ManagerLoginInput() {
     );
 }
 
-export default ManagerLoginInput;
+export default LoginInput;

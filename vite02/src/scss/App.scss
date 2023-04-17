@@ -9,60 +9,30 @@
 
 
 :root {
-    body {
+    .loginPage {
         margin: 0;
-    }
-    .mainPage {
-        margin:0;
-        min-height: 100vh;
-        @include flex-style(column, center, center);
-
-        .loginBtns {
+        position: fixed;
+        top: 25%;
+        left: 25%;
+        height: 50vh;
+        width: 50vw;
+        @include flex-style(column, space-evenly, center);
+        .loginBox {
             @include flex-style(row, space-evenly, center);
-            min-height: 20vh;
-            min-width: 50vw;
-            .pending { 
-                @include loginbtn-style();
-                color: black;
-                &:hover {
-                        background-color: #213547;
-                        color: white;
-                    }
+            height: 80%;
+            margin: 0;
+            .loginInput {
+                @include flex-style(column, space-evenly, center);
+                height: 60%;
+                input {
+                    font-size: 1.2vmax;
+                }
             }
-            .active {
-                @include loginbtn-style();
-                color: white;
-                background-color: #213547;
+            button {
+                font-size: 1vmax;
             }
         }
 
-        .loginPage {
-            @include flex-style(column, space-evenly, center);
-            height: 40vh;
-            .loginBox {
-                @include flex-style(row, space-evenly, center);
-                height: 80%;
-                margin: 0;
-                .loginInput {
-                    @include flex-style(column, space-evenly, center);
-                    height: 60%;
-                    input {
-                        font-size: 1.2vmax;
-                    }
-                }
-                button {
-                    font-size: 1vmax;
-                }
-            }
-            .goMain {
-                text-decoration: none;
-                font-size: 1.2vmax;
-                color: black;
-                &:hover {
-                    color: blue;
-                }
-            }
-        }
     }
 }
 

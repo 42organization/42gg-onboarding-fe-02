@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Button } from "@mui/material";
-import "../scss/layout.scss";
+import { isNormal, isManager, isAdmin } from "./LoginAtom";
+import { useRecoilValue } from "recoil";
 
 function MyNavLink(props) {
-    const { content } = props;
+    const { listName } = props;
 
     return (
-        <NavLink className="sideNav">{content}</NavLink>
-    );
+        <NavLink className="sideNav">{listName}</NavLink>
+    )
 }
 
 
@@ -23,17 +24,25 @@ const SideBar = () => {
         setDrawer(false);
     };
 
+    let listName;
+    if (useRecoilValue(isNormal) === true) {
+        listName = "Normal";
+    } else if (useRecoilValue(isManager) === true) {
+        listName = "Manager";
+    } else if (useRecoilValue(isAdmin) === true) {
+        listName = "Admin";
+    }
+
 
     return (
         <aside>
             <Button variant="outlined" onClick={drawer ? handleDrawerClose : handleDrawerOpen}>Menu</Button>
             <nav className={ drawer ? "isOpen" : "isClose" }>
-                <MyNavLink content="리스트 1" />
-                <MyNavLink content="리스트 2" />
-                <MyNavLink content="리스트 3" />
-                <MyNavLink content="리스트 4" />
-                <MyNavLink content="리스트 5" />
-                <MyNavLink content="리스트 6" />
+                <MyNavLink listName={listName} />
+                <MyNavLink listName={listName} />
+                <MyNavLink listName={listName} />
+                <MyNavLink listName={listName} />
+                <MyNavLink listName={listName} />
             </nav>
         </aside>
         

@@ -1,9 +1,10 @@
 import React from "react";
-import { NavBarNormal } from "../../component/TopNav";
-import SideBar from "../../component/SideBar";
+import { NavBarNormal } from "../component/TopNav";
+import SideBar from "../component/SideBar";
 import { Outlet } from "react-router-dom";
+import "../scss/layout.scss";
 
-function NormalPage() {
+function HomePage() {
     return (
         <div>
             <NavBarNormal />
@@ -17,4 +18,4 @@ function NormalPage() {
     )
 }
 
-export default NormalPage;
+export default HomePage;
