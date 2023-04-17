@@ -1,0 +1,81 @@
+@import "./Common.scss";
+
+@mixin loginbtn-style {
+    @include flex-style(row, center, center);
+    font-size: 2vmax;
+    padding: 5%;
+    text-decoration: none;
+}
+
+
+:root {
+    body {
+        margin: 0;
+    }
+    .mainPage {
+        margin:0;
+        min-height: 100vh;
+        @include flex-style(column, center, center);
+
+        .loginBtns {
+            @include flex-style(row, space-evenly, center);
+            min-height: 20vh;
+            min-width: 50vw;
+            .pending { 
+                @include loginbtn-style();
+                color: black;
+                &:hover {
+                        background-color: #213547;
+                        color: white;
+                    }
+            }
+            .active {
+                @include loginbtn-style();
+                color: white;
+                background-color: #213547;
+            }
+        }
+
+        .loginPage {
+            @include flex-style(column, space-evenly, center);
+            height: 40vh;
+            .loginBox {
+                @include flex-style(row, space-evenly, center);
+                height: 80%;
+                margin: 0;
+                .loginInput {
+                    @include flex-style(column, space-evenly, center);
+                    height: 60%;
+                    input {
+                        font-size: 1.2vmax;
+                    }
+                }
+                button {
+                    font-size: 1vmax;
+                }
+            }
+            .goMain {
+                text-decoration: none;
+                font-size: 1.2vmax;
+                color: black;
+                &:hover {
+                    color: blue;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+color {
+    color: #213547;
+    color: #747bff;
+    color: #ffffff;
+    color: #f9f9f9;
+    color: #646cff;
+    color: #242424;
+    color: #535bf2;
+    color: #1a1a1a;
+}

@@ -1,19 +1,29 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import { Button } from "@mui/material";
 
 function MainPage() {
     return (
-        <div>
-            <Link to="/normal/Login">
-                <button>normal</button>
-            </Link>
-            <Link to="/manager/Login">
-                <button>manager</button>
-            </Link>
-            <Link to="/admin/Login">
-                <button>admin</button>
-            </Link>
-            
+        <div className="mainPage">
+            <div className="loginBtns">
+                <Button variant="outlined">
+                    <NavLink to="/normal-login" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : "pending"}>
+                        normal
+                    </NavLink>
+                </Button>
+                <Button variant="outlined">
+                    <NavLink to="/manager-login" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : "pending"}>
+                        manager
+                    </NavLink>
+                </Button>
+                <Button variant="outlined">
+                    <NavLink to="/admin-login" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : "pending"}>
+                        admin
+                    </NavLink>
+                </Button>
+            </div>
+            <Outlet />
         </div>
     )
 }

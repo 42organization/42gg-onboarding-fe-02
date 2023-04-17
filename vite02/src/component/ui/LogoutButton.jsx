@@ -2,7 +2,7 @@ import React from "react";
 import { isNormal, isManager, isAdmin } from "../LoginAtom";
 import { useSetRecoilState } from "recoil";
 import { useNavigate } from "react-router-dom";
-
+import { Button } from "@mui/material";
 
 const LogoutButton = () => {
     const setIsNormal = useSetRecoilState(isNormal);
@@ -18,8 +18,8 @@ const LogoutButton = () => {
     }
     
     return (
-        <div>
-            <button type="button" className="logoutBtn" onClick={ClickLogout}>로그아웃</button>
+        <div className="logoutBtn">
+            <Button variant="outlined" onClick={ClickLogout}>로그아웃</Button>
         </div>
     )
 }

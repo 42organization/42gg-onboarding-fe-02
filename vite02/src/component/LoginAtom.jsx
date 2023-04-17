@@ -4,8 +4,6 @@ import { recoilPersist } from "recoil-persist";
 const { persistAtom } = recoilPersist({
     key: "my-session-storage",
     storage: sessionStorage,
-    secretKey: "secret",
-    encrypt: true,
 });
 
 export const isNormal = atom({

@@ -13,11 +13,11 @@ export const RouteMain = () => {
 
     let page = "/";
     if (all === 1) {
-        page = "/normal/home";
+        page = "/normal";
     } else if (all === 2) {
-        page = "/manager/home";
+        page = "/manager";
     } else if (all === 3) {
-        page = "/admin/home";
+        page = "/admin";
     }
     useEffect(() => {
         if (all !== 0) {

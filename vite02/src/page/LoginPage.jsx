@@ -6,7 +6,7 @@ import GoMain from "../component/utils/GoMain";
 
 export function NormalLoginPage () {
     return (
-        <div className="NormalLoginPage">
+        <div className="loginPage">
             <NormalLoginInput />
             <GoMain />
         </div>
@@ -16,7 +16,7 @@ export function NormalLoginPage () {
 export function ManagerLoginPage () {
     
     return (
-        <div className="ManagerLoginPage">
+        <div className="loginPage">
             <ManagerLoginInput />
             <GoMain />
         </div>
@@ -26,7 +26,7 @@ export function ManagerLoginPage () {
 export function AdminLoginPage () {
     
     return (
-        <div className="AdminLoginPage">
+        <div className="loginPage">
             <AdminLoginInput />
             <GoMain />
         </div>

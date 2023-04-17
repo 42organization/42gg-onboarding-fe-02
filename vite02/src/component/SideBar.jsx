@@ -1,29 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import "../SideBar.scss"
+import { Button } from "@mui/material";
+import "../scss/layout.scss";
+
+function MyNavLink(props) {
+    const { content } = props;
+
+    return (
+        <NavLink className="sideNav">{content}</NavLink>
+    );
+}
+
 
 const SideBar = () => {
+    const [drawer, setDrawer] = useState(false);
+
+    const handleDrawerOpen = () => {
+        setDrawer(true);
+    };
+    
+    const handleDrawerClose = () => {
+        setDrawer(false);
+    };
+
+
     return (
-        <div>
-            <nav className="sideBar">
-                <div>
-                    <NavLink>리스트1</NavLink>
-                </div>
-                <div>
-                    <NavLink>리스트2</NavLink>
-                </div>
-                <div>
-                    <NavLink>리스트3</NavLink>
-                </div>
-                <div>
-                    <NavLink>리스트4</NavLink>
-                </div>
-                <div>
-                    <NavLink>리스트5</NavLink>
-                </div>
+        <aside>
+            <Button variant="outlined" onClick={drawer ? handleDrawerClose : handleDrawerOpen}>Menu</Button>
+            <nav className={ drawer ? "isOpen" : "isClose" }>
+                <MyNavLink content="리스트 1" />
+                <MyNavLink content="리스트 2" />
+                <MyNavLink content="리스트 3" />
+                <MyNavLink content="리스트 4" />
+                <MyNavLink content="리스트 5" />
+                <MyNavLink content="리스트 6" />
             </nav>
-        </div>
+        </aside>
+        
     )
+
 }
 
 export default SideBar;

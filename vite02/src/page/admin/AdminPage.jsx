@@ -1,16 +1,17 @@
 import React from "react";
 import { NavBarAdmin } from "../../component/TopNav";
 import SideBar from "../../component/SideBar";
-import Content from "../../component/Content";
+import { Outlet } from "react-router-dom";
 
 function AdminPage() {
     return (
         <div>
             <NavBarAdmin />
-            <main>
+            <aside>
                 <SideBar />
-                <Content title="빈 컨텐츠" sub="내용을 채워주세요"/>
-
+            </aside>
+            <main>
+                <Outlet />
             </main>
         </div>
     )

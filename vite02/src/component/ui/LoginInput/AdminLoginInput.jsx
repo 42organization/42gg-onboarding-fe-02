@@ -2,29 +2,46 @@ import React, { useRef } from "react";
 import { isAdmin } from "../../LoginAtom";
 import { useSetRecoilState } from "recoil";
 import { useNavigate } from "react-router-dom";
-import { curVal, fillIdPw } from "../../utils/LoginInputUtils";
+import { 
+    TextField,
+    FormControl,
+    Button
+} from "@mui/material";
 
 function AdminLoginInput() {
-    const userId = useRef();
-    const userPw = useRef();
+    const userId = useRef(null);
+    const userPw = useRef(null);
     const setIsAdmin = useSetRecoilState(isAdmin);
     const navigate = useNavigate();
     
     const getUser = async (URL) => {
-        const res = (await fetch(URL)).json();
-        return res;
+        const res = await fetch(URL)
+        const data = await res.json();
+        return data;
     }
     const users = getUser("/userInfo");
-    console.log(users);
 
     const validId = (id, pw) => {
         users.then((value) => {
             value.admin.map((exist) => {if (id === exist.id && pw === exist.pw) {
                 setIsAdmin(true);
-                navigate("/admin/home");
+                navigate("/admin");
             }}
         )}
     )}
+
+    const curVal = (user) => {
+        return (user.current.value);
+    }
+
+    const fillIdPw = () => {
+        if (curVal(userId) === "") {
+            alert("아이디를 입력하세요.");
+        } else if (curVal(userPw) === "") {
+            alert("비밀번호를 입력하세요.");
+        }
+    }
+
 
     const clickCheckIdPw = () => {
         if (curVal(userId) === "" || curVal(userPw) === "") {
@@ -44,13 +61,15 @@ function AdminLoginInput() {
         }
     }
 
+
     return (
-        <div>
-            <span>아이디</span>
-            <input maxLength= "15" type="text" placeholder="ID" ref={userId} onKeyUp={keyUpCheckInput}></input>
-            <span>비밀번호</span>
-            <input maxLength="15" type="password" placeholder="PASSWORD" ref={userPw} onKeyUp={keyUpCheckInput}></input>
-            <button type="button" onClick={clickCheckIdPw}>로그인</button>
+        <div className="loginBox">
+            <FormControl className="loginInput" sx={{ m: 1, width: '25ch' }} id="outlined-basic" variant="outlined">
+                <TextField label="ID" inputProps={{ onKeyUp:keyUpCheckInput }}
+                inputRef={userId}/>
+                <TextField label="PASSWORD" type="password" inputProps={{ onKeyUp:keyUpCheckInput }} inputRef={userPw}/>
+            </FormControl>
+            <Button variant="outlined" onClick={clickCheckIdPw}>로그인</Button>
         </div>
     );
 }
