@@ -4,4 +4,4 @@ export const roleType = {
   MANAGER: 3,
   ADMIN: 4,
 };
-// TODO : Object.freeze(roleType);
+Object.freeze(roleType);
