@@ -50,8 +50,8 @@ $middle-font-size: 1.2rem;
 
 @mixin clickable-box {
   background-color: $smoke-red;
-  cursor: pointer;
   color: $smoke-blue;
+  cursor: pointer;
   &:hover {
     background-color: $smoke-yellow;
   }

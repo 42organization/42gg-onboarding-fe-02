@@ -2,8 +2,8 @@
 
 .button {
   @include clickable-box;
-  font-size: $button-font-size;
   margin-top: 3rem;
   padding: 0.5rem 1rem;
   border-radius: $radius;
+  font-size: $button-font-size;
 }

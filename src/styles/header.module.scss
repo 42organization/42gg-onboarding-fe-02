@@ -13,11 +13,10 @@
 }
 
 .title {
-  font-family: $default-font;
-  font-size: $title-font-size;
-  color: $smoke-blue;
   margin: 0;
   padding: 0.5rem 0;
+  color: $smoke-blue;
+  font-size: $title-font-size;
 }
 
 .button {
