@@ -1,7 +1,7 @@
 import { loginResultType } from '../types';
 
 export const login = async (username, password) => {
-  const loginRes = await fetch('login', {
+  const loginRes = await fetch('/login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -24,7 +24,7 @@ export const login = async (username, password) => {
 };
 
 export const logout = async () => {
-  await fetch('logout', {
+  await fetch('/logout', {
     method: 'POST',
     headers: {
       credentials: 'include',
