@@ -1,5 +1,8 @@
 import { rest } from 'msw';
+import { store as cookieStore } from '@mswjs/cookies';
 import { userList } from '../commons';
+
+const AUTHTOKENKEY = 'auth-token';
 
 export const handlers = [
   rest.post('/login', async (req, res, ctx) => {
@@ -16,22 +19,23 @@ export const handlers = [
     }
     return res(
       ctx.status(200),
-      ctx.cookie('auth-token', user.token),
+      ctx.cookie(AUTHTOKENKEY, user.token),
       ctx.json({ msg: '로그인 성공.' })
     );
   }),
 
   rest.post('/logout', (req, res, ctx) => {
-    const token = req.cookies['auth-token']; // 요청 헤더의 auth-token
+    const token = req.cookies[AUTHTOKENKEY]; // 요청 헤더의 auth-token
     const user = userList.find((user) => user.token === token); // userList에서 토큰에 해당하는 user를 가져옴
+    clearCookie();
     if (!user) {
-      return res(ctx.status(401), ctx.cookie('auth-token', ''));
+      return res(ctx.status(401));
     }
-    return res(ctx.status(200), ctx.cookie('auth-token', ''));
+    return res(ctx.status(200));
   }),
 
   rest.get('/user', (req, res, ctx) => {
-    const token = req.cookies['auth-token']; // 요청 헤더의 auth-token
+    const token = req.cookies[AUTHTOKENKEY]; // 요청 헤더의 auth-token
     const user = userList.find((user) => user.token === token); // userList에서 토큰에 해당하는 user를 가져옴
     if (!user) {
       return res(ctx.status(401));
@@ -42,3 +46,9 @@ export const handlers = [
     );
   }),
 ];
+
+function clearCookie() {
+  document.cookie =
+    AUTHTOKENKEY + '=; path=/; expires=' + new Date().toGMTString() + ';';
+  cookieStore.clear(); // TODO: 특정 쿠키만 만료시키는 법?
+}
