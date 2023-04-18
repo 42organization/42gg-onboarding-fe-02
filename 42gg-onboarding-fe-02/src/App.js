@@ -10,14 +10,8 @@ import { useRecoilState } from 'recoil';
 import authAtom from './auth/authatom';
 import RoutingPage from './page/RoutingPage';
 import styles from './scss/App.module.scss';
-import NomalPage from './page/NomalPage';
+import NormalPage from './page/NormalPage';
 import Container from '@mui/material/Container';
-
-/* import styled from 'styled-components';
-
-const AppWrep = styled.div`
-	display: flex;
-`; */
 
 function App() {
 	const [auth, setAuth] = useRecoilState(authAtom);
@@ -36,7 +30,7 @@ function App() {
 		if (authFromLocalStorage === "1" || authFromLocalStorage === "2")
 			return <MainPage />;
 		else 
-			return <NomalPage />;
+			return <NormalPage />;
 	}
 
 	return (

@@ -1,43 +1,27 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-//import styles from "./scss/style.module.scss";
+import styles from "./scss/style.module.scss";
 import LogoutButton from './page/LogoutButton';
-/* import styled from 'styled-components';
-
-const SidebarWrep = styled.div`
-display: flex;
-//flex-direction: column;
-align-items: center;
-justify-content: center;
-position: fixed;
-width: 200px;
-//background-color: rgb(240, 247, 92);
-height: 100vh;
-`;
-
-const Right = styled.div`
-	width: 10%;
-	height:5rem;
-	margin-left: 10%;
-`; */
+import Button from '@mui/material/Button';
 
 function Sidebar() {
-
 	return (
-		<div>
+		<div className={styles.SidebarWrep}>
+			<nav>
 			<Link to="/about">
-				<button>About</button>
+				<Button>About</Button>
 			</Link>
 				<Link to="/Home">
-					<button>Menu</button>
+					<Button>Menu</Button>
 				</Link>
 				<Link to="/Profile">
-					<button>Profile</button>
+					<Button>Profile</Button>
 				</Link>
 				<Link to="/Login">
 						<LogoutButton />
 				</Link>
+			</nav>
 		</div>
 	);
 }

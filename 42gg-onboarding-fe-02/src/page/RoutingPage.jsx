@@ -6,8 +6,8 @@ import authAtom from "../auth/authatom";
 function RoutingPage({ Component }) {
 	const [component, setComponent ] = useState(null);
 	const auth = useRecoilValue(authAtom);
-
 	const Navigate = useNavigate();
+
 	useEffect(() => {
 		const authFromLocalStorage = JSON.parse(localStorage.getItem('auth'));
 		if (!authFromLocalStorage) {
@@ -17,6 +17,7 @@ function RoutingPage({ Component }) {
 			setComponent(Component(auth));
 		}
 	}, []);
+	
 	return component;
 }
 

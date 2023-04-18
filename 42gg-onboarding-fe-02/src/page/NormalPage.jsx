@@ -1,15 +1,13 @@
 import React from 'react';
 import { Link, Navigate, Route, Routes} from "react-router-dom";
-import Home from "./page/Home";
-import About from "./page/About";
-import NotFound from "./page/NotFound";
-import Users from "./Users";
-import LoginForm from './page/LoginForm';
-import Profile from './page/Profile';
-import PrivateRoute from './auth/PrivateRoute';
-import Sidebar from './Sidebar';
+import Home from "./Home";
+import About from "./About";
+import NotFound from "./NotFound";
+import LoginForm from './LoginForm';
+import Profile from './Profile';
+import Sidebar from '../Sidebar';
 import Button from '@mui/material/Button';
-import styles from './scss/navbar.module.scss';
+import styles from '../scss/navbar.module.scss';
 
 function Header() {
 	return (
@@ -21,9 +19,6 @@ function Header() {
 				<Link to="/about">
 					<Button>About</Button>
 				</Link>
-				<Link to="/users">
-					<Button>Users</Button>
-				</Link>
 				<Link to="/Profile">
 					<Button>Profile</Button>
 				</Link>
@@ -33,14 +28,10 @@ function Header() {
 }
 
 function Body() {
-	const users = () => {
-		return <Users />;
-	};
 	return (
 			<Routes className={styles.bodypage}>
 				<Route path="/*" element={<Home />} />
 				<Route path="/about" element={<About />} />
-				<Route path="/users/*" element={<PrivateRoute Component={users} />} />
 				<Route path="/profile" element={<Profile />} />
 				<Route path="/login" element={<LoginForm />}/>
 				<Route path="*" element={<NotFound />} />
@@ -49,7 +40,7 @@ function Body() {
 }
 
 
-function MainPage() {
+function NormalPage() {
 	const authFromLocalStorage = JSON.parse(localStorage.getItem('auth'));
 	if (!authFromLocalStorage)
 		return <Navigate to='/login' />;
@@ -66,4 +57,6 @@ function MainPage() {
 	);
 }
 
-export default MainPage;
+export default NormalPage;
+
+
