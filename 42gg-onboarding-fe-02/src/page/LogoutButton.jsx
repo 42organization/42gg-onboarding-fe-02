@@ -13,7 +13,7 @@ function LogoutButton() {
 		localStorage.setItem('auth', JSON.stringify(false));
 		navigate('/login');
 	};
-	return <Button variant="outlined" onClick={handleClick}>Logout</Button>;
+	return <Button style={{background: '#fff2e5' ,color: '#d0936d', borderColor: '#d0936d'}} variant="outlined" onClick={handleClick}>Logout</Button>;
 }
 
 export default LogoutButton;

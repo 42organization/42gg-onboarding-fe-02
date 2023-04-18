@@ -14,13 +14,13 @@ function Header() {
 		<header>
 		<nav className={styles.nav_item}>
 				<Link to="/" className={styles.Home}>
-					<Button>Bookjeok Bookjeok</Button>
+					<Button style={{color: '#d0936d'}}>Bookjeok Bookjeok</Button>
 				</Link>
 				<Link to="/about">
-					<Button>About</Button>
+					<Button style={{color: '#d0936d'}}>About</Button>
 				</Link>
 				<Link to="/Profile">
-					<Button>Profile</Button>
+					<Button style={{color: '#d0936d'}}>Profile</Button>
 				</Link>
 		</nav>
 		</header>

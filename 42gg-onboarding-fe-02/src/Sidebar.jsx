@@ -10,13 +10,13 @@ function Sidebar() {
 		<div className={styles.SidebarWrep}>
 			<nav>
 			<Link to="/about">
-				<Button>About</Button>
+				<Button style={{color: '#d0936d'}}>About</Button>
 			</Link>
 				<Link to="/Home">
-					<Button>Menu</Button>
+					<Button style={{color: '#d0936d'}}>Menu</Button>
 				</Link>
 				<Link to="/Profile">
-					<Button>Profile</Button>
+					<Button style={{color: '#d0936d'}}>Profile</Button>
 				</Link>
 				<Link to="/Login">
 						<LogoutButton />
