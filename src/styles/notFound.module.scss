@@ -1,0 +1,9 @@
+@import './common.scss';
+
+.button {
+  @include clickable-box;
+  margin-top: 3rem;
+  padding: 0.5rem 1rem;
+  border-radius: $radius;
+  font-size: $button-font-size;
+}

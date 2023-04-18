@@ -1,34 +1,62 @@
 # 42gg 프론트엔드 온보딩 2단계
 
-## 공통 조건
+## 실행 방법
 
-- 온보딩 프로젝트는 개인 계정으로 fork하여 진행하고 PR로 제출합니다.
-- git / github / code 컨벤션은 42gg notion에 있는 자료를 적극 반영합니다.
-- 기본 기능 외 추가 기능, 디자인 구현은 자유입니다.
-- 최종 제출품에는 README 작성이 되있어야 합니다.([예시](https://github.com/42organization/42gg.client/blob/main/README.md))
+```
+yarn install
+yarn dev
+```
 
-## EX01. login / logout 구현하기
+## 구현된 기능
 
-- (필수) React.js, Recoil, SCSS
-- (필수) eslint, prettier 설정
-- (필수) 함수 컴포넌트로 제작
-- (선택) CRA, Webpack, Vite
-- (선택) msw, react-query / SWR
-- (선택) Figma, MUI, Ant Design, Tailwind CSS
-- (선택) 계정 유효성 검사
+### 유저 정보
 
-## EX02. 유저 권한별 routing page
+유저 정보는 js 파일 내 객체로 관리합니다. (`src/commons/userList.js`)
 
-- (중요) EX01 결과물에 이어서 작업합니다.
-- (필수) normal, manager, admin 3개의 권한을 가진 유저별 정보 제공
-- (필수) 권한별 routing page 구현
-- (필수) 상단 navbar, sidebar 제작
-- (선택) React-Router-Dom v6, Context API
-- (선택) 로그인 유지
-- (선택) custom hook
+```
+username: 'red',
+password: 'qwe123!@#',
+role: Admin
+---
+username: 'blue',
+password: 'qwe123!@#',
+role: Manager
+---
+username: 'green',
+password: 'qwe123!@#',
+role: Normal
+```
 
-## 참고
+### 로그인, 로그아웃
 
-- 유저 정보는 json-server or js 파일 내 객체를 이용하여 관리합니다.
-- 로그인/로그아웃 구현하기 위해 필요한 기능과 화면 구성들을 생각(그려보고)해보고, 구현해보세요.
-- 궁금한 사항은 issue에 등록해주세요.
+[msw](https://mswjs.io/)를 이용한 mock api를 사용했습니다.
+
+- 로그인: `POST /login`
+- 로그아웃: `POST /logout`
+- 유저 정보: `GET /user`
+
+### 유저 권한별 routing page
+
+권한은 각각 Public, Normal, Manager, Admin으로 구분합니다.
+
+- Public: 로그인하지 않은 유저도 접근 가능한 페이지 (Login 페이지)
+- Normal: 로그인한 유저만 접근 가능한 페이지 (Normal 페이지)
+- Manager: Manager, Admin 권한을 가진 유저만 접근 가능한 페이지 (Manager 페이지)
+- Admin: Admin 권한을 가진 유저만 접근 가능한 페이지 (Admin 페이지)
+
+사이드 네비게이션바에는 현재 로그인한 유저가 접근할 수 있는 페이지만 나타납니다.
+
+## 폴더 구조
+
+```
+.
+├── public
+└── src
+    ├── commons     :   공통 데이터 객체들
+    ├── components  :   컴포넌트
+    ├── mocks       :   msw 관련 파일
+    ├── pages       :   페이지 컴포넌트
+    ├── styles      :   scss 파일
+    ├── types       :   타입 정의
+    └── utils       :   hook, atom 등 유틸함수들
+```
