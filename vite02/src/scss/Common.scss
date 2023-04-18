@@ -1,0 +1,8 @@
+$ease-out: cubic-bezier(0.165, 0.84, 0.44, 1);
+
+@mixin flex-style ($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}

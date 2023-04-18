@@ -1,0 +1,51 @@
+@import "./Common.scss";
+
+@mixin loginbtn-style {
+    @include flex-style(row, center, center);
+    font-size: 2vmax;
+    padding: 5%;
+    text-decoration: none;
+}
+
+:root {
+    .dark, .light {
+        position: absolute;
+        z-index: 10;
+        border: none;
+        border-radius: 10%;
+    }
+    .dark {
+        background-color: white;
+        color: black;
+    }
+    .light {
+        background-color: black;
+        color: white;
+    }
+    
+    .loginPage {
+        margin: 0;
+        position: fixed;
+        top: 25%;
+        left: 25%;
+        height: 50vh;
+        width: 50vw;
+        @include flex-style(column, center, center);
+        .loginBox {
+            @include flex-style(row, space-evenly, center);
+            height: 70%;
+            width: 70%;
+            margin: 0;
+            .loginInput {
+                @include flex-style(column, space-evenly, center);
+                height: 60%;
+                input {
+                    font-size: 1.3vmax;
+                }
+            }
+            button {
+                font-size: 1.5vmax;
+            }
+        }
+    }
+}
