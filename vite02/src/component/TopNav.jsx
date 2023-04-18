@@ -31,27 +31,29 @@ export const NavBarNormal = () => {
     if (isN) {
         return (
             <header className="topNav">
-                <div>
+                <div className="title">
                     <a href="/home">
                         <h1>FE-02</h1>
                     </a>
                 </div>
-                <Tabs className="navTabs" value={value} onChange={handleChange} aria-label="nav tabs example">
-                    <LinkTab label="홈" to="/home"/>
-                    <LinkTab label="추천 목록" to="/home/recommend-list"/>
-                    <LinkTab label="상품 목록" to="/home/product-list"/>
-                    <LinkTab label="설정" to="/home/normal-setting"/>
-                </Tabs>
+                    <Tabs className="navTabs" orientation="horizontal" variant="scrollable" value={value} onChange={handleChange} aria-label="nav tabs example">
+                        <LinkTab label="홈" to="/home"/>
+                        <LinkTab label="추천 목록" to="/home/recommend-list"/>
+                        <LinkTab label="상품 목록" to="/home/product-list"/>
+                        <LinkTab label="설정" to="/home/normal-setting"/>
+                    </Tabs>
                 <LogoutButton />
             </header>
         );
     } else if (isM) {    
         return (
             <header className="topNav">
-                <a href="/home">
-                    <h1>FE-02</h1>
-                </a>            
-                <Tabs className="navTabs" value={value} onChange={handleChange} aria-label="nav tabs example" centered>
+                <div className="title">
+                    <a href="/home">
+                        <h1>FE-02</h1>
+                    </a>            
+                </div>
+                <Tabs className="navTabs" orientation="horizontal" variant="scrollable" value={value} onChange={handleChange} aria-label="nav tabs example">
                     <LinkTab label="홈" to="/home"/>
                     <LinkTab label="추천 목록" to="/home/recommend-list"/>
                     <LinkTab label="상품 목록" to="/home/product-list"/>
@@ -64,10 +66,12 @@ export const NavBarNormal = () => {
     } else if (isA) {
         return (
             <header className="topNav">
-                <a href="/home">
-                    <h1>FE-02</h1>
-                </a>            
-                <Tabs className="navTabs" value={value} onChange={handleChange} aria-label="nav tabs example" centered>
+                <div className="title">
+                    <a href="/home">
+                        <h1>FE-02</h1>
+                    </a>            
+                </div>
+                <Tabs className="navTabs" orientation="horizontal" variant="scrollable" value={value} onChange={handleChange} aria-label="nav tabs example">
                     <LinkTab label="홈" to="/home"/>
                     <LinkTab label="추천 목록" to="/home/recommend-list"/>
                     <LinkTab label="상품 목록" to="/home/product-list"/>

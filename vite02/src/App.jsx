@@ -7,11 +7,33 @@ import { LoginPage } from './page/LoginPage';
 import HomePage from './page/HomePage';
 import PageContents from './page/PageContents';
 import SettingPage from './page/SettingPage';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 
 function App() {
+  const [darkMode, isDarkMode] = React.useState("light");
+
+  const onClickDark = () => {
+    if (darkMode === "light") {
+      isDarkMode("dark");
+    } else {
+      isDarkMode("light");
+    }
+  };
+
+  const darkTheme = createTheme({
+    palette: {
+      mode: darkMode,
+    },
+  });
 
   return (
-    <div className="App">
+    <ThemeProvider theme={darkTheme}>
+      <CssBaseline />
+      <div className="App">
+        <div>
+          <button className={darkMode} onClick={onClickDark}>{(darkMode === "light") ? "dark" : "light"}</button>
+        </div>
         <Routes>
 
           {/* 메인 로그인페이지 */}
@@ -56,7 +78,8 @@ function App() {
           <Route path="*" element={<NotFound/>}/>
 
         </Routes>
-    </div>
+      </div>
+    </ThemeProvider>
   )
 }
 

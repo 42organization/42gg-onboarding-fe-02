@@ -4,7 +4,6 @@ import { useSetRecoilState } from "recoil";
 import { useNavigate } from "react-router-dom";
 import { 
     TextField,
-    FormControl,
     Button
 } from "@mui/material";
 
@@ -90,12 +89,12 @@ function LoginInput() {
 
     return (
         <div className="loginBox">
-            <FormControl className="loginInput" sx={{ m: 1, width: '25ch' }} id="outlined-basic" variant="outlined">
-                <TextField label="ID" inputProps={{ onKeyUp:keyUpCheckInput }}
+            <form className="loginInput">
+                <TextField label="ID" variant="standard" inputProps={{ onKeyUp:keyUpCheckInput }}
                 inputRef={userId}/>
-                <TextField label="PASSWORD" type="password" inputProps={{ onKeyUp:keyUpCheckInput }} inputRef={userPw}/>
-            </FormControl>
-            <Button variant="outlined" onClick={clickCheckIdPw}>로그인</Button>
+                <TextField label="PASSWORD" variant="standard" type="password" inputProps={{ onKeyUp:keyUpCheckInput }} inputRef={userPw}/>
+            </form>
+            <Button size="string" variant="outlined" onClick={clickCheckIdPw}>로그인</Button>
         </div>
     );
 }

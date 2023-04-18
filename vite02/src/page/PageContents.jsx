@@ -11,7 +11,6 @@ function PageContents(props) {
             <Icon path={mdiAccountAlert} size={3} />
         </div>
     )
-
 }
 
 export default PageContents;

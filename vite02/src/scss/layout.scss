@@ -8,45 +8,26 @@ header {
     width: 100vw;
     height: 15vh;
     margin: 0;
-    @include flex-style(row, space-evenly, center);
+    @include flex-style(row, space-around, center);
     
-    div {
-        min-width: 15vw;
-        min-height: 30%;
+    .title, .logoutBtn {
+        width: 15vw;
+        height: 100%;
         @include flex-style(row, center, center);
+        // h1 {
+        //     text-decoration: none;
+        // }
         a {
+            font-size: 1.7vw;
             text-decoration: none;
-            font-size: 1.3vmax;
         }
     }
-
-    .navTabs {
-        @include flex-style(row, space-around,center);
-        min-width: 70vw;
-        height: 100%;
-        .linkTab {
-            width: 15%;
-            font-size: 1.5vmax;
-        }
+    .linkTab {
+        font-size: 1.7vw;
     }
-
-    a {
-        // color: white;
-        font-size: 1.5vmax;
-        text-decoration: none;
-    }
-    
-    .navTabs {
-        top: 0;
-        height: 100%;
-        @include flex-style(row, space-around, center);
-        // background-color: black;
-        }
-
     .logoutBtn {
         button {
-
-            font-size: 1.1vmax;
+            font-size: 1.2vw;
             &:hover {
                 background-color: #747bff;
                 color: white;
@@ -61,24 +42,20 @@ aside {
     position: fixed;
     left: 0;
     top: 15vh;
-    width: 12vw;
+    width: 15vw;
     height: 85vh;
-    button {
-        font-size: 1.1vmax;
-        left: 2vw;
-    }
 
     nav {
         @include flex-style(column, space-around, center);
-        position:absolute;
+        position: absolute;
         height: 70vh;
-        width:10vw;
+        width: 15vw;
         transition: 1s;
         .sideNav {
             text-decoration: none;
         }
         &.isClose {
-            transform: translateX(-15vw);   
+            transform: translateX(-20vw);   
         }
     }
 }
@@ -88,12 +65,16 @@ main {
     margin: 0;
     position: fixed;
     top: 15vh;
-    left: 12vw;
-    width: 88vw;
+    left: 15vw;
+    width: 70vw;
     height: 85vh;
     @include flex-style(column, center, center);
 
     div {
         @include flex-style(column, center, center);
     }
+    .goMain {
+        text-decoration: none;
+    }
+
 }

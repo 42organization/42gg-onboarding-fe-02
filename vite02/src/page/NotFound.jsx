@@ -1,6 +1,5 @@
 import React from "react";
 import GoMain from "../component/utils/GoMain";
-import LogoutButton from "../component/ui/LogoutButton";
 
 function NotFound() {
     return (
@@ -9,7 +8,6 @@ function NotFound() {
             <h3>Not Found</h3>
             <h5>The resource requested could not be found on this server!</h5>
             <GoMain />
-            <LogoutButton />
         </main>
     )
 }

@@ -19,7 +19,7 @@ const LogoutButton = () => {
     
     return (
         <div className="logoutBtn">
-            <Button variant="outlined" onClick={ClickLogout}>로그아웃</Button>
+            <Button size="string" variant="outlined" onClick={ClickLogout}>로그아웃</Button>
         </div>
     )
 }
