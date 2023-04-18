@@ -1,2 +1,2 @@
-export { Header } from './Header';
-export { Sidebar } from './Sidebar';
+export { DefaultLayout } from './DefaultLayout';
+export { PublicLayout } from './PublicLayout';

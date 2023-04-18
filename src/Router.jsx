@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { routes } from './commons';
 import { roleType } from './types';
 import { RouteWithAuth } from './components/RouteWithAuth';
-import { DefaultLayout, PublicLayout } from './layouts';
+import { DefaultLayout, PublicLayout } from './components/layouts';
 
 export function Router() {
   return (
