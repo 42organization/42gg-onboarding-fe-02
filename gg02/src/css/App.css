@@ -1,0 +1,32 @@
+.App {
+  text-align: center;
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.Input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3%;
+}
+
+button {
+  display: flex;
+  width: 200px;
+  height: 35px;
+  align-items: center;
+  justify-content: center;
+  font-weight: 750;
+  font-size: large;
+  color: #7aedfc;
+  background-color: hsl(207, 58%, 17%);
+  border: solid 1px #7aedfc;
+  border-radius: 15px;
+}
