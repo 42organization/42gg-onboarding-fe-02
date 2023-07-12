@@ -1,9 +1,15 @@
 import React from 'react';
 
 function HandleButton() {
+  function handleClick() {
+    console.log('Click happened');
+  }
+
   return (
     <div>
-      <button type="button">SIGN IN</button>
+      <button type="submit" onClick={handleClick}>
+        SIGN IN
+      </button>
     </div>
   );
 }

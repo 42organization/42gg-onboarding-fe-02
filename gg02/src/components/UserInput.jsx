@@ -1,10 +1,23 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 function UserInput() {
+  const nameInputRef = useRef();
+  const passwordInputRef = useRef();
+
   return (
     <div className="Input">
-      <input name="username" type="text" placeholder="username" />
-      <input name="password" type="password" placeholder="password" />
+      <input
+        ref={nameInputRef}
+        name="username"
+        type="text"
+        placeholder="username"
+      />
+      <input
+        ref={passwordInputRef}
+        name="password"
+        type="password"
+        placeholder="password"
+      />
     </div>
   );
 }
