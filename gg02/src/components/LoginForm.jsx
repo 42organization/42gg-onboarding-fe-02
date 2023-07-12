@@ -1,27 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import UserInput from './UserInput';
 import HandleButton from './HandleButton';
+import '../css/LoginForm.css';
 
 function LoginForm() {
+  const [validInput, setValidInput] = useState(false);
+  const [inputTouched, setInputTouched] = useState(false);
+
   function handleSubmit(event) {
     event.preventDefault();
-    console.log(event.target);
+    // console.log(event.target);
     const enteredUser = event.target[0].value;
     const enteredPassword = event.target[1].value;
-    console.log(`user: ${enteredUser}, pw: ${enteredPassword}`);
-    if (!enteredUser.trim().length) {
-      alert('아이디를 입력해주세요.');
+    setInputTouched(true);
+    // console.log(`user: ${enteredUser}, pw: ${enteredPassword}`);
+    if (!enteredUser.trim().length || !enteredPassword.length) {
+      setValidInput(false);
       return;
     }
-    if (!enteredPassword.length) {
-      alert('비밀번호를 입력해주세요.');
-    }
+    setValidInput(true);
   }
 
+  const invalidInput = !validInput && inputTouched;
+
   return (
-    <div className="Login">
+    <div className='Login'>
       <form onSubmit={handleSubmit}>
-        <UserInput />
+        <UserInput invalidInput={invalidInput} />
         <HandleButton />
       </form>
     </div>

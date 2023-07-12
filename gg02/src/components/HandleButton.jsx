@@ -7,7 +7,7 @@ function HandleButton() {
 
   return (
     <div>
-      <button type="submit" onClick={handleClick}>
+      <button type='submit' onClick={handleClick}>
         SIGN IN
       </button>
     </div>
