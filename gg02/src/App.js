@@ -4,19 +4,15 @@ import './css/styles.scss';
 
 function App() {
   return (
-    <div className='App'>
+    <div className="App">
       <h1>HELLO WORLD </h1>
 
-      <div className='Input'>
-        <label htmlFor='ID'>
-          ID <input name='username' type='text' />
-        </label>
-        <label htmlFor='PW'>
-          PW <input name='password' type='password' />
-        </label>
+      <div className="Input">
+        <input name="username" type="text" placeholder='username' />
+        <input name="password" type="password" placeholder='password'/>
       </div>
       <div>
-        <button type='button'>SIGN IN</button>
+        <button type="button">SIGN IN</button>
       </div>
     </div>
   );
