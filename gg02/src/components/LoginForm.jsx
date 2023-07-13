@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import UserInput from './UserInput';
 import HandleButton from './HandleButton';
 import './LoginForm.css';
@@ -6,6 +7,7 @@ import './LoginForm.css';
 function LoginForm() {
   const [validInput, setValidInput] = useState(false);
   const [inputTouched, setInputTouched] = useState(false);
+  const navigate = useNavigate();
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -19,6 +21,7 @@ function LoginForm() {
       return;
     }
     setValidInput(true);
+    navigate('/main/home');
   }
 
   const invalidInput = !validInput && inputTouched;
