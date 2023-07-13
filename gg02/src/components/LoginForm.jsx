@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import UserInput from './UserInput';
 import HandleButton from './HandleButton';
-import '../css/LoginForm.css';
+import './LoginForm.css';
 
 function LoginForm() {
   const [validInput, setValidInput] = useState(false);
