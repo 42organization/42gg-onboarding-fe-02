@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useRecoilState } from 'recoil';
 import UserInput from './UserInput';
 import HandleButton from './HandleButton';
 import './LoginForm.css';
+import users from '../UserInfo';
+import loginState from '../atom';
 
 function LoginForm() {
   const [validInput, setValidInput] = useState(false);
   const [inputTouched, setInputTouched] = useState(false);
-  const navigate = useNavigate();
+  const [isLoggedIn, setIsLoggedIn] = useRecoilState(loginState);
 
+  const navigate = useNavigate();
   function handleSubmit(event) {
     event.preventDefault();
     // console.log(event.target);
@@ -21,15 +25,26 @@ function LoginForm() {
       return;
     }
     setValidInput(true);
-    navigate('/main/home');
+    const loggedInUser = users.filter(
+      (user) => user.id === enteredUser && user.pw === enteredPassword
+    );
+    if (!loggedInUser.length) {
+      setIsLoggedIn(false);
+    } else {
+      setIsLoggedIn(true);
+      const user = JSON.stringify(loggedInUser[0], ['id', 'auth']);
+      localStorage.setItem('user', user);
+      navigate(`/main/${loggedInUser[0].auth}`);
+    }
   }
 
   const invalidInput = !validInput && inputTouched;
+  const invalidUser = !isLoggedIn && inputTouched;
 
   return (
     <div className='Login'>
       <form onSubmit={handleSubmit}>
-        <UserInput invalidInput={invalidInput} />
+        <UserInput invalidInput={invalidInput} invalidUser={invalidUser} />
         <HandleButton />
       </form>
     </div>

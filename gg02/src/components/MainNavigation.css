@@ -6,20 +6,51 @@
   height: 5rem;
   background-color: #4f5879;
   color: rgb(29, 238, 238);
+  width: 100vw;
+  height: 4rem;
+  position: fixed;
 }
 
-li {
+.nav-bar li {
   list-style: none;
   display: inline;
   margin: 0 2rem;
 }
 
+.nav-bar button {
+  display: inline;
+  background-color: transparent;
+  border: none;
+  color: #b5c6df;
+  font-size: 1rem;
+  font-weight: lighter;
+  cursor: pointer;
+  width: auto;
+  /* width: 12 rem; */
+}
+
 a {
   text-decoration: none;
+  font-size: 1rem;
   color: #b5c6df;
 }
 
+.nav-bar button:hover,
 a:hover,
 a:active {
   color: #7aedfc;
+}
+
+.side-bar {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  width: 5rem;
+  background-color: #b5c6df;
+  color: #4f5879;
+  transition: width 0.5s;
+  z-index: 1;
+  position: fixed;
 }
