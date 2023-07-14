@@ -1,20 +1,27 @@
 import React, { useRef } from 'react';
 
-function UserInput({ invalidInput }) {
+function UserInput({ invalidInput, invalidUser }) {
   const nameInputRef = useRef();
   const passwordInputRef = useRef();
-
+  function checkError() {
+    let errorMessage = '';
+    if (invalidInput) {
+      errorMessage = '아이디와 비밀번호를 입력해주세요.';
+    } else if (invalidUser) {
+      errorMessage = '아이디 혹은 비밀번호를 확인해주세요.';
+    }
+    return errorMessage;
+  }
   return (
     <div className='Input'>
-      {invalidInput && (
-        <div className='error-message'>아이디와 비밀번호를 입력해주세요.</div>
-      )}
+      <div className='error-message'>{checkError()}</div>
       <input
         className='input-box'
         ref={nameInputRef}
         name='username'
         type='text'
         placeholder='username'
+        autoComplete='off'
       />
       <input
         className='input-box'
@@ -22,6 +29,7 @@ function UserInput({ invalidInput }) {
         name='password'
         type='password'
         placeholder='password'
+        autoComplete='off'
       />
     </div>
   );
