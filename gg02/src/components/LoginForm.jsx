@@ -5,7 +5,7 @@ import UserInput from './UserInput';
 import HandleButton from './HandleButton';
 import './LoginForm.css';
 import users from '../UserInfo';
-import loginState from '../atom';
+import loginState from '../loginAtom';
 
 function LoginForm() {
   const [validInput, setValidInput] = useState(false);

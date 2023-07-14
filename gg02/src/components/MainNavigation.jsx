@@ -2,16 +2,18 @@ import React, { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useRecoilValue, useResetRecoilState } from 'recoil';
 import './MainNavigation.css';
-import loginState from '../atom';
+import loginState from '../loginAtom';
 
 function MainNavigation() {
   const resetLoginState = useResetRecoilState(loginState);
   const isLoggedIn = useRecoilValue(loginState);
-
+  let buttonText = 'SIGN OUT';
   useEffect(() => {
     console.log('HomePage - ', isLoggedIn);
   }, [isLoggedIn]);
-
+  if (!isLoggedIn) {
+    buttonText = 'SIGN IN';
+  }
   const navigate = useNavigate();
   function handleLogOut() {
     localStorage.removeItem('user');
@@ -28,7 +30,7 @@ function MainNavigation() {
             </li>
             <li>
               <button type='button' onClick={handleLogOut}>
-                SIGN OUT
+                {buttonText}
               </button>
             </li>
           </ul>

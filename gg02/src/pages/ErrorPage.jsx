@@ -1,12 +1,15 @@
 import React from 'react';
-import MainNavigation from '../components/MainNavigation';
+// import MainNavigation from '../components/MainNavigation';
+import '../styles.scss';
 
-function ErrorPage() {
+function ErrorPage({ message }) {
   return (
     <div>
-      <MainNavigation />
-      <h1>ERROR</h1>
-      <p>요청한 페이지를 찾을 수 없습니다</p>
+      {/* <MainNavigation /> */}
+      <div className='main'>
+        <h1>ERROR</h1>
+        <p>{message}</p>
+      </div>
     </div>
   );
 }

@@ -1,5 +1,19 @@
 $light-grey: #b5c6df;
+$bg-color: #282c34;
+$neon-blue: rgb(29, 238, 238);
 
 h1 {
   color: $light-grey;
+}
+
+.main {
+  text-align: center;
+  background-color: $bg-color;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color: $neon-blue;
 }
