@@ -1,42 +1,12 @@
-import React, { useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { useRecoilValue, useResetRecoilState } from 'recoil';
-import './MainNavigation.css';
-import loginState from '../loginAtom';
+import React from 'react';
+import SideBar from './Sidebar';
+import NavBar from './Navbar';
 
 function MainNavigation() {
-  const resetLoginState = useResetRecoilState(loginState);
-  const isLoggedIn = useRecoilValue(loginState);
-  let buttonText = 'SIGN OUT';
-  useEffect(() => {
-    console.log('HomePage - ', isLoggedIn);
-  }, [isLoggedIn]);
-  if (!isLoggedIn) {
-    buttonText = 'SIGN IN';
-  }
-  const navigate = useNavigate();
-  function handleLogOut() {
-    localStorage.removeItem('user');
-    resetLoginState();
-    navigate('/');
-  }
   return (
     <div>
-      <header>
-        <nav className='nav-bar'>
-          <ul>
-            <li>
-              <Link to='/main/normal'>HOME</Link>
-            </li>
-            <li>
-              <button type='button' onClick={handleLogOut}>
-                {buttonText}
-              </button>
-            </li>
-          </ul>
-        </nav>
-      </header>
-      <div className='side-bar'>side bar</div>
+      <NavBar />
+      <SideBar />
     </div>
   );
 }
