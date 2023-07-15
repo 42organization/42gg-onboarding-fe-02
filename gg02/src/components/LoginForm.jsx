@@ -6,13 +6,15 @@ import HandleButton from './HandleButton';
 import './LoginForm.css';
 import users from '../UserInfo';
 import loginState from '../loginAtom';
+import userState from '../userAtom';
 
 function LoginForm() {
   const [validInput, setValidInput] = useState(false);
   const [inputTouched, setInputTouched] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useRecoilState(loginState);
-
+  const [userAuth, setUserAuth] = useRecoilState(userState);
   const navigate = useNavigate();
+
   function handleSubmit(event) {
     event.preventDefault();
     // console.log(event.target);
@@ -33,8 +35,9 @@ function LoginForm() {
     } else {
       setIsLoggedIn(true);
       const user = JSON.stringify(loggedInUser[0], ['id', 'auth']);
+      setUserAuth(loggedInUser[0].auth);
       localStorage.setItem('user', user);
-      navigate(`/main/${loggedInUser[0].auth}`);
+      navigate('/main', { replace: true });
     }
   }
 
