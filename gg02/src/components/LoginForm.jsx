@@ -3,10 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 import UserInput from './UserInput';
 import HandleButton from './HandleButton';
-import './LoginForm.css';
 import users from '../UserInfo';
 import loginState from '../loginAtom';
 import userState from '../userAtom';
+import './LoginForm.scss';
 
 function LoginForm() {
   const [validInput, setValidInput] = useState(false);
@@ -17,11 +17,9 @@ function LoginForm() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    // console.log(event.target);
     const enteredUser = event.target[0].value;
     const enteredPassword = event.target[1].value;
     setInputTouched(true);
-    // console.log(`user: ${enteredUser}, pw: ${enteredPassword}`);
     if (!enteredUser.trim().length || !enteredPassword.length) {
       setValidInput(false);
       return;

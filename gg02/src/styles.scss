@@ -3,10 +3,6 @@ $bg-color: #282c34;
 $nav-color: #4f5879;
 $neon-blue: rgb(29, 238, 238);
 
-h1 {
-  color: $light-grey;
-}
-
 .main {
   text-align: center;
   background-color: $bg-color;
@@ -17,4 +13,8 @@ h1 {
   justify-content: center;
   font-size: 30px;
   color: whitesmoke;
+
+  h1 {
+    color: $light-grey;
+  }
 }
