@@ -1,8 +1,9 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 
 function UserInput({ invalidInput, invalidUser }) {
   const nameInputRef = useRef();
   const passwordInputRef = useRef();
+
   function checkError() {
     let errorMessage = '';
     if (invalidInput) {
@@ -12,6 +13,11 @@ function UserInput({ invalidInput, invalidUser }) {
     }
     return errorMessage;
   }
+
+  useEffect(() => {
+    nameInputRef.current.focus();
+  }, [invalidInput, invalidUser]);
+
   return (
     <div className='Input'>
       <div className='error-message'>{checkError()}</div>
