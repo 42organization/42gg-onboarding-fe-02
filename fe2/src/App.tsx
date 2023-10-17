@@ -1,28 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 
-function App() {
-  const zero = 0;
+import Navbar from './Components/Navbar/navbar';
+import LoginPage from './Pages/login';
+import MainPage from './Pages/main';
+import AllPage from './Pages/all';
+import AdminPage from './Pages/admin';
+import EmptyPage from './Pages/empty';
 
+const App: React.FC = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <Routes>
+        <Route path="" element={<MainPage />} />
+        <Route path="/main" element={<MainPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/admin" element={<AdminPage />} />
+        <Route path="/all" element={<AllPage />} />
+        <Route path="/*" element={<EmptyPage />} />
+      </Routes>
     </div>
   );
-}
+};
 
 export default App;
