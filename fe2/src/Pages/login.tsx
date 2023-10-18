@@ -4,6 +4,7 @@ import { useRecoilState } from 'recoil';
 import { roleState } from '../Atoms/role';
 import { useNavigate } from 'react-router-dom';
 
+import './login.scss';
 const url = 'http://localhost:4000/user'; // 대상 URL
 
 const LoginPage: React.FC = () => {
@@ -55,8 +56,8 @@ const LoginPage: React.FC = () => {
   };
 
   return (
-    <div>
-      <div> This is Login Page</div>
+    <div className="login-page">
+      <div className="message">This is Login Page</div>
       <input
         type="text"
         placeholder="ID"

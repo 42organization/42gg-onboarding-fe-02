@@ -6,6 +6,11 @@
       "role": "admin"
     },
     {
+      "id": "manager",
+      "password": "helloworld",
+      "role": "manager"
+    },
+    {
       "id": "user",
       "password": "helloworld",
       "role": "user"
