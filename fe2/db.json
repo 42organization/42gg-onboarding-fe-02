@@ -1,0 +1,19 @@
+{
+  "user": [
+    {
+      "id": "admin",
+      "password": "helloworld",
+      "role": "admin"
+    },
+    {
+      "id": "manager",
+      "password": "helloworld",
+      "role": "manager"
+    },
+    {
+      "id": "user",
+      "password": "helloworld",
+      "role": "user"
+    }
+  ]
+}

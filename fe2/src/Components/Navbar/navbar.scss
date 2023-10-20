@@ -1,0 +1,39 @@
+// src/styles/navbar.scss
+
+.navbar {
+  display: flex;
+  justify-content: space-between;  /* 가장 왼쪽과 가장 오른쪽으로 정렬 */
+  align-items: center;  /* 세로 방향 가운데 정렬 */
+  background-color: #333;
+  color: white;
+  padding: 10px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.navbar button {
+  background-color: transparent;
+  text-decoration: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.navbar a:hover, .navbar button:hover {
+  background-color: #555;
+}
+
+.navbar .left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .right {
+  display: flex;
+  align-items: center;
+}
