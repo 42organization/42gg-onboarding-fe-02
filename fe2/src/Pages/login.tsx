@@ -10,6 +10,7 @@ const url = 'http://localhost:4000/user'; // 대상 URL
 const LoginPage: React.FC = () => {
   const [id, setId] = useState('');
   const [pw, setPw] = useState('');
+  const [inProcess, setInProcess] = useState(false);
   const [role, setRole] = useRecoilState(roleState);
   const navigate = useNavigate();
   let logined = false;
@@ -30,10 +31,12 @@ const LoginPage: React.FC = () => {
   const handleLogin = () => {
     const checkid = id;
     const checkpw = pw;
+    setInProcess(true);
 
     fetch(url)
       .then((response) => {
         if (!response.ok) {
+          setInProcess(false);
           throw new Error('Network response was not ok');
         }
         return response.json(); // JSON 형태로 응답 데이터를 파싱
@@ -47,10 +50,12 @@ const LoginPage: React.FC = () => {
             break;
           }
         }
+        setInProcess(false);
         if (!logined) window.alert('해당 계정이 없습니다.');
         else navigate('/main');
       })
       .catch((error) => {
+        setInProcess(false);
         console.error('Error:', error);
       });
   };
@@ -70,7 +75,9 @@ const LoginPage: React.FC = () => {
         value={pw}
         onChange={handlePwChange}
       />
-      <button onClick={handleLogin}>Login</button>
+      <button onClick={handleLogin} disabled={inProcess}>
+        Login
+      </button>
     </div>
   );
 };

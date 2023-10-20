@@ -1,18 +1,19 @@
 .sidebar {
-    flex: 1;
-    width: 10px;
-    background-color: #333;
-    color: white;
-    padding: 20px;
-  }
-  
-  .sidebar a {
-    text-decoration: none;
-    display: block;
-    color: white;
-    padding: 10px 0;
-  }
-  
-  .sidebar a:hover {
-    background-color: #555;
-  }
+  flex: 1;
+  width: 10px;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  display: block;
+  color: white;
+  padding: 10px 0;
+  border: none;
+}
+
+.sidebar a:hover {
+  background-color: #555;
+}

@@ -2,8 +2,8 @@
 
 .navbar {
   display: flex;
-  justify-content: space-between;  /* 가장 왼쪽과 가장 오른쪽으로 정렬 */
-  align-items: center;  /* 세로 방향 가운데 정렬 */
+  justify-content: space-between; /* 가장 왼쪽과 가장 오른쪽으로 정렬 */
+  align-items: center; /* 세로 방향 가운데 정렬 */
   background-color: #333;
   color: white;
   padding: 10px;
@@ -22,9 +22,11 @@
   color: white;
   padding: 5px 10px;
   border-radius: 5px;
+  border: none;
 }
 
-.navbar a:hover, .navbar button:hover {
+.navbar a:hover,
+.navbar button:hover {
   background-color: #555;
 }
 

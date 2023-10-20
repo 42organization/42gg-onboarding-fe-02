@@ -2,17 +2,17 @@
   "user": [
     {
       "id": "admin",
-      "password": "helloworld",
+      "password": "1234",
       "role": "admin"
     },
     {
       "id": "manager",
-      "password": "helloworld",
+      "password": "1234",
       "role": "manager"
     },
     {
       "id": "user",
-      "password": "helloworld",
+      "password": "1234",
       "role": "user"
     }
   ]
