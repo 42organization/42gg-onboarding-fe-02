@@ -30,10 +30,6 @@
   }
 }
 
-.background {
-  /* background-color: slategray; */
-}
-
 .logincontainer {
   min-height: 100%;
   flex: 1 1 0%;
@@ -59,12 +55,6 @@
 
 .inputcontainer {
   margin-top: 2.5rem /* 40px */;
-}
-
-.space_y_6 > :not([hidden]) ~ :not([hidden]) {
-  /* --tw-space-y-reverse: 0; */
-  /* margin-top: calc(1.5rem 24px * calc(1 - var(--tw-space-y-reverse))); */
-  /* margin-bottom: calc(1.5rem 24px * var(--tw-space-y-reverse)); */
 }
 
 .emailcontainer {
@@ -145,7 +135,10 @@
 
 .btn {
   padding: 1rem 2rem;
-  width: 50%;
+  width: 100%;
+  margin-top: 5%;
+  margin-left: 3%;
+  /* transform: translate(-50%, 0); */
   font-weight: 700;
   background: rgb(255, 255, 255);
   color: blueviolet;
