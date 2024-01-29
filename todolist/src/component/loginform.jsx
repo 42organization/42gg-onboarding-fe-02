@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
 import styles from '../styles/login.module.css';
-// import
+import users from '../component/userinfo';
 
 function loginform() {
   function inputhandler(event) {
     event.preventDefault();
     const idSet = event.target[0].value;
     const pwSet = event.target[1].value;
+
+    if (idSet.length() == 0 || pwSet.length() == 0) {
+      alert('id 또는 pw를 확인해주세요');
+      return;
+    }
   }
   return (
     <>
