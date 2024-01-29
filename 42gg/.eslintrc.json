@@ -1,0 +1,13 @@
+{
+  "extends": ["prettier", "next/core-web-vitals", "airbnb", "airbnb/hooks"],
+  "rules": {
+    "@next/next/no-html-link-for-pages": ["error", "packages/my-app/pages/"],
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    ],
+    "react/react-in-jsx-scope": "off"
+  }
+}
