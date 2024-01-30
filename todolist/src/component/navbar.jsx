@@ -1,11 +1,19 @@
 import React from 'react';
 import styles from '../styles/nav.module.css';
 import { useNavigate } from 'react-router-dom';
+import { useSetRecoilState } from 'recoil';
+import { authState } from '../atoms/authatoms';
 
 function navbar() {
   const navigate = useNavigate();
+  const setAuthState = useSetRecoilState(authState);
 
   function logoutHandler() {
+    setAuthState({
+      isLoggedIn: false,
+      userName: 'default',
+      userRole: 'guest',
+    });
     navigate('/');
   }
   return (

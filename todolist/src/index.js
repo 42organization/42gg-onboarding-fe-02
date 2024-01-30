@@ -1,5 +1,5 @@
 import React from 'react';
-import { createRoot } from 'react-dom';
+import { createRoot } from 'react-dom/client'; // 변경된 부분
 import { RecoilRoot } from 'recoil';
 import App from './App';
 
