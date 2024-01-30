@@ -1,3 +1,5 @@
+import logo from './logo.svg';
+import './App.css';
 import {
   RecoilRoot,
   atom,
@@ -6,10 +8,12 @@ import {
   useRecoilValue,
 } from 'recoil';
 
-export default function Home() {
+function App() {
   return (
     <RecoilRoot>
-      <div>hello</div>
+      <CharacterCounter />
     </RecoilRoot>
   );
 }
+
+export default App;
