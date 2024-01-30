@@ -1,21 +1,21 @@
 const users = [
   {
-    id: 'jaeywon',
+    id: 'jaeywon@42seoul.kr',
     pw: '1234',
     role: 'admin',
   },
   {
-    id: 'guest1',
+    id: 'guest1@42seoul.kr',
     pw: '1234',
     role: 'guest',
   },
   {
-    id: 'manager1',
+    id: 'manager1@42seoul.kr',
     pw: '1234',
     role: 'manager',
   },
   {
-    id: '42gg',
+    id: '42gg@42seoul.kr',
     pw: '1234',
     role: 'guest',
   },

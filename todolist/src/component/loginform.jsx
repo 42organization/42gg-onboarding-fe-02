@@ -1,21 +1,40 @@
 import React, { useState } from 'react';
 import styles from '../styles/login.module.css';
 import users from '../component/userinfo';
+import { useSetRecoilState } from 'recoil';
+import { authState } from '../atoms/authatoms';
+import { useNavigate } from 'react-router-dom';
 
 function loginform() {
+  const setAuthState = useSetRecoilState(authState);
+  const navigate = useNavigate();
+
   function inputhandler(event) {
     event.preventDefault();
     const idSet = event.target[0].value;
     const pwSet = event.target[1].value;
 
-    if (idSet.length() == 0 || pwSet.length() == 0) {
+    if (!idSet.length || !pwSet.length) {
       alert('id 또는 pw를 확인해주세요');
       return;
+    }
+    const matchedUser = users.find(
+      (users) => users.id === idSet && users.pw === pwSet
+    );
+    if (matchedUser) {
+      setAuthState({
+        isLoggedIn: true,
+        userName: matchedUser.id,
+        userRole: matchedUser.role,
+      });
+      navigate('/Lobby');
+    } else {
+      alert('id 또는 pw를 확인해주세요');
     }
   }
   return (
     <>
-      <form>
+      <form onSubmit={inputhandler}>
         <div>
           <label htmlFor='email' className={`${styles.emailcontainer}`}>
             Email address
@@ -49,13 +68,6 @@ function loginform() {
         </div>
         <div className={styles.mt_2}>
           <button className={styles.btn}> Sign in </button>
-          {/* <button className={styles.btn2}>
-          <img
-            className={styles.img}
-            src='https://profile.intra.42.fr/assets/42_logo_black-684989d43d629b3c0ff6fd7e1157ee04db9bb7a73fba8ec4e01543d650a1c607.png'
-            alt='이미지 버튼'
-          />
-        </button> */}
         </div>
       </form>
     </>

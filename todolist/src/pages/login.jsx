@@ -1,23 +1,8 @@
 import React, { useEffect } from 'react';
 import styles from '../styles/login.module.css';
 import Loginform from '../component/loginform';
-import { useSetRecoilState } from 'recoil';
-import { authState } from '../atoms/authatoms';
 
 function login() {
-  const setAuthState = useSetRecoilState(authState);
-
-  useEffect(() => {
-    const loggedInUser = JSON.parse(localStorage.getItem('loggedInUsers'));
-
-    if (loggedInUser) {
-      setAuthState({
-        isLoggedIn: true,
-        userRole: loggedInUser.role,
-      });
-    }
-  }, []);
-
   return (
     <>
       <div className={styles.background}>

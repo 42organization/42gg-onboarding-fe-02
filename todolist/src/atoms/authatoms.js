@@ -4,7 +4,7 @@ export const authState = atom({
   key: 'authState',
   default: {
     isLoggedIn: false,
+    userName: 'default',
     userRole: 'guest',
-    effects_UNSTABLE: [persistAtom],
   },
 });
