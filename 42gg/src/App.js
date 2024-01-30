@@ -1,18 +1,12 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-import {
-  RecoilRoot,
-  atom,
-  selector,
-  useRecoilState,
-  useRecoilValue,
-} from 'recoil';
+import HomePage from './pages/HomePage';
 
 function App() {
   return (
-    <RecoilRoot>
-      <CharacterCounter />
-    </RecoilRoot>
+    <div>
+      <HomePage />
+    </div>
   );
 }
 
