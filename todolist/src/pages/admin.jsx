@@ -15,7 +15,7 @@ function admin() {
       navigate('/');
     }
     console.log(userRole);
-    if (userRole === 'guest' || userRole === 'manage') {
+    if (userRole === 'guest' || userRole === 'manager') {
       navigate('/Lobby');
     }
   }, []);
