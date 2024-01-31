@@ -1,14 +1,32 @@
-function Login() {
-  function handleSubmit(e) {
-    e.preventDefault();
-    const id = e.target[0].value;
-    const pw = e.target[1].value;
+import axios from 'axios';
 
-    if (pw.length < 8) {
-      alert('Password must be at least 8 characters long.');
-      return;
+export default Login;
+
+function Login() {
+  async function handleSubmit(e) {
+    e.preventDefault();
+    let id = e.target[0].value;
+    let password = e.target[1].value;
+
+    await axios
+      .post('http://localhost:3000/login', {
+        id,
+        password,
+        role: null,
+      })
+      .then((res) => {
+        console.log(res);
+      });
+
+    getUser();
+  }
+  async function getUser() {
+    try {
+      const response = await axios.get('/user?ID=12345');
+      console.log(response);
+    } catch (error) {
+      console.error(error);
     }
-    console.log(id, pw);
   }
 
   return (
@@ -23,5 +41,3 @@ function Login() {
     </div>
   );
 }
-
-export default Login;
