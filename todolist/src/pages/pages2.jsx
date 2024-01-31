@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navbar from '../component/navbar';
 import Sidebar from '../component/sidebar';
 import { useRecoilValue } from 'recoil';
@@ -9,12 +9,16 @@ function pages2() {
   const { isLoggedIn, userRole } = useRecoilValue(authState);
   const navigate = useNavigate();
 
-  if (!isLoggedIn) {
-    navigate('/');
-  }
-  if (userRole == 'geust') {
-    navigate('/Lobby');
-  }
+  useEffect(() => {
+    if (!isLoggedIn) {
+      navigate('/');
+    }
+    console.log(userRole);
+    if (userRole === 'guest') {
+      navigate('/Lobby');
+    }
+  }, []);
+
   return (
     <div>
       <Navbar />

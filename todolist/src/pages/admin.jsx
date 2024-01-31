@@ -4,17 +4,22 @@ import Sidebar from '../component/sidebar';
 import { useRecoilValue } from 'recoil';
 import { authState } from '../atoms/authatoms';
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
-function pages2() {
+function admin() {
   const { isLoggedIn, userRole } = useRecoilValue(authState);
   const navigate = useNavigate();
 
-  if (!isLoggedIn) {
-    navigate('/');
-  }
-  if (userRole == 'geust' || userRole == 'manager') {
-    navigate('/Lobby');
-  }
+  useEffect(() => {
+    if (!isLoggedIn) {
+      navigate('/');
+    }
+    console.log(userRole);
+    if (userRole === 'guest' || userRole === 'manage') {
+      navigate('/Lobby');
+    }
+  }, []);
+
   return (
     <div>
       <Navbar />
@@ -23,4 +28,4 @@ function pages2() {
   );
 }
 
-export default pages2;
+export default admin;

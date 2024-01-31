@@ -14,6 +14,15 @@ function sidebar() {
   function moveToLobby() {
     navigate('/Lobby');
   }
+  function moveToPages1() {
+    navigate('/guest');
+  }
+  function moveToPages2() {
+    navigate('/manage');
+  }
+  function moveToAdmin() {
+    navigate('/admin');
+  }
   return (
     <div className={styles.container}>
       <nav>
@@ -25,19 +34,19 @@ function sidebar() {
               <span className={styles.te}>Lobby</span>
             </div>
           </li>
-          <li>
+          <li onClick={moveToPages1}>
             <div>
               <Checklist />
-              <span className={styles.te}>Checklist</span>
+              <span className={styles.te}>Page1</span>
             </div>
           </li>
-          <li>
+          <li onClick={moveToPages2}>
             <div>
               <Checklist />
-              <span className={styles.te}>Checklist</span>
+              <span className={styles.te}>Page2</span>
             </div>
           </li>
-          <li>
+          <li onClick={moveToAdmin}>
             <div>
               <Admin />
               <span className={styles.te}>Admin</span>
