@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from '../styles/login.module.css';
 import users from '../component/userinfo';
 import { useSetRecoilState } from 'recoil';
@@ -22,9 +22,10 @@ function loginform() {
       (users) => users.id === idSet && users.pw === pwSet
     );
     if (matchedUser) {
+      const userid = idSet.slice(0, idSet.indexOf('@'));
       setAuthState({
         isLoggedIn: true,
-        userName: matchedUser.id,
+        userName: userid,
         userRole: matchedUser.role,
       });
       navigate('/Lobby');
