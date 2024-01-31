@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
 
 .container {
+  background-color: #ede9fe;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: row;
   position: relative;
