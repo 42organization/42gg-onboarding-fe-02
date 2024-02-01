@@ -7,35 +7,45 @@ const users = [
 ];
 
 export const handlers = [
-  http.post('http://localhost:3000/login', (req, res, ctx) => {
-    const { id, password } = req.body; // Access request body
+  // http.post('http://localhost:3000/login', (req, res, ctx) => {
+  //   const { id, password } = req.body; // Access request body
 
-    console.log('id:' + id);
+  //   console.log('id:' + id);
 
-    const user = users.find(
-      (user) => user.id === id && user.password === password
+  //   const user = users.find(
+  //     (user) => user.id === id && user.password === password
+  //   );
+
+  //   if (user) {
+  //     return res(
+  //       ctx.status(200),
+  //       ctx.json({
+  //         role: user.role,
+  //       })
+  //     );
+  //   } else {
+  //     return res(
+  //       ctx.status(401),
+  //       ctx.json({
+  //         error: 'Invalid login credentials',
+  //       })
+  //     );
+  //   }
+  // }),
+  http.post('/id', (req, res, ctx) => {
+    const test = req.body;
+    console.log(test);
+    return res(
+      ctx.status(200),
+      ctx.json({
+        role: 'admin',
+      })
     );
-
-    if (user) {
-      return res(
-        ctx.status(200),
-        ctx.json({
-          role: user.role,
-        })
-      );
-    } else {
-      return res(
-        ctx.status(401),
-        ctx.json({
-          error: 'Invalid login credentials',
-        })
-      );
-    }
   }),
-  http.get('/login', () => {
+  http.get('/id', (x) => {
     console.log('hello');
     // Respond with "401 Unauthorized" to "GET /user" requests.
-    return new HttpResponse(null, { status: 401 });
+    return new HttpResponse(null, { status: 402 });
   }),
 ];
 
