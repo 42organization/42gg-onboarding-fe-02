@@ -1,13 +1,20 @@
 import React from 'react';
-import './App.css';
-import HomePage from './pages/HomePage.jsx';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import './App.css';
+import HomePage from './pages/HomePage';
+import ErrorPage from './pages/ErrorPage';
+import AdminPage from './pages/AdminPage';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <HomePage />,
-    errorElement: <h1> fail</h1>, // TODO: get error page
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: '/adminPage',
+    element: <AdminPage />,
+    errorElement: <ErrorPage />,
   },
 ]);
 
