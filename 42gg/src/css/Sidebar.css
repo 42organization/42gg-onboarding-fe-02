@@ -1,0 +1,26 @@
+.Sidebar {
+  position: fixed;
+  width: 10%;
+}
+
+.Sidebar img {
+  position: inherit;
+  left: 0em;
+  height: auto;
+  bottom: 0em;
+  width: 20%;
+}
+
+.Sidebar-header {
+  position: inherit;
+  text-align: center;
+  font-size: 3em;
+  width: 20%;
+  height: 100%;
+  background-color: red;
+}
+
+.Sidebar li {
+  position: inherit;
+  margin: 10em;
+}
