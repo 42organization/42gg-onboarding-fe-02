@@ -7,56 +7,18 @@ const users = [
 ];
 
 export const handlers = [
-  // http.post('http://localhost:3000/login', (req, res, ctx) => {
-  //   const { id, password } = req.body; // Access request body
+  http.post('/id', async ({ request }) => {
+    const body = await request.json();
 
-  //   console.log('id:' + id);
-
-  //   const user = users.find(
-  //     (user) => user.id === id && user.password === password
-  //   );
-
-  //   if (user) {
-  //     return res(
-  //       ctx.status(200),
-  //       ctx.json({
-  //         role: user.role,
-  //       })
-  //     );
-  //   } else {
-  //     return res(
-  //       ctx.status(401),
-  //       ctx.json({
-  //         error: 'Invalid login credentials',
-  //       })
-  //     );
-  //   }
-  // }),
-  http.post('/id', (req, res, ctx) => {
-    const test = req.body;
-    console.log(test);
-    return res(
-      ctx.status(200),
-      ctx.json({
-        role: 'admin',
-      })
+    const user = users.find(
+      (v) => v.id === body.id && v.password === body.password
     );
-  }),
-  http.get('/id', (x) => {
-    console.log('hello');
-    // Respond with "401 Unauthorized" to "GET /user" requests.
-    return new HttpResponse(null, { status: 402 });
+
+    if (user !== undefined)
+      return HttpResponse.json({
+        id: user.id,
+        role: user.role,
+      });
+    return new HttpResponse('fake', { status: 400 });
   }),
 ];
-
-// export const handlers = [
-//   http.post(`http://localhost:3000/login`, ({ request }) => {
-//     const info = request.formData();
-//     console.log('hadler:' + info);
-//     return HttpResponse.ok({
-//       body: {
-//         role: users.find((user) => user.id === info.get('id'))?.role,
-//       },
-//     });
-//   }),
-// ];
