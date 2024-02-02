@@ -1,6 +1,5 @@
 import React from 'react';
-// import ReactDOM from 'react-dom/client';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import './index.css';
 import { RecoilRoot } from 'recoil';
 import App from './App.js';
@@ -14,13 +13,12 @@ async function enableMocking() {
 }
 
 enableMocking().then(() => {
-  ReactDOM.render(
+  ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
       <RecoilRoot>
         <App />
       </RecoilRoot>
-    </React.StrictMode>,
-    document.getElementById('root')
+    </React.StrictMode>
   );
 });
 
