@@ -8,14 +8,12 @@ export function useLoginForm() {
   const [password, setPassword] = useState("");
   const [, setUser] = useRecoilState(userState);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    LoginRequest({ email, password })
-      .then((json) => {
-        setUser({
-          json,
-        });
+    return LoginRequest({ email, password })
+      .then((user) => {
+        setUser(user);
       })
       .catch((e) => console.log(e));
   };

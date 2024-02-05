@@ -12,9 +12,6 @@ export function Login() {
 
   return (
     <div className={styles.loginCon}>
-      <header>
-        <h2>로그인</h2>
-      </header>
       <form onSubmit={handleSubmit}>
         <div className={styles.inputBox}>
           <label htmlFor="EmailLoginInput">아이디</label>
