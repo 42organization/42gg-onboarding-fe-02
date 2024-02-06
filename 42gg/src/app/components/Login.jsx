@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React from 'react';
 import '../css/Login.css';
-import { BrowserRouter } from 'react-router-dom';
 
 export default Login;
 
@@ -14,13 +13,13 @@ function Login() {
     axios
       .post('/id', { id, password })
       .then(({ data }) => {
-        if (data.id !== id) {
-          throw new Error('비정상 접근입니다.');
-        }
-        console.log('data', data.id);
+        if ('normal' === data.role) console.log('normal user');
+        else if ('manager' === data.role) console.log('good manager');
+        else if ('admin' === data.role) console.log('good admin');
+        else throw new Error('아이디 또는 비밀번호가 틀렸습니다.');
       })
       .catch((err) => {
-        console.log('아이디 패스워드를 확인하세요.');
+        console.log(err);
       });
   }
 

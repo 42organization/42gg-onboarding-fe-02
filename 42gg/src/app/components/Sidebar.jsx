@@ -1,10 +1,12 @@
 import React from 'react';
 import '../css/Sidebar.css';
+import { Link } from 'react-router-dom';
 
 function Sidebar() {
   return (
-    <div className='Sidebar'>
+    <div id='Sidebar'>
       <ul>
+        <Link to={'todoPage'}>TodoPage</Link>
         <li>Todo</li>
         <li>Manage</li>
         <li>Permission</li>
