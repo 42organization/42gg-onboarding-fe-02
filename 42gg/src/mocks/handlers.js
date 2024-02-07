@@ -7,7 +7,7 @@ const users = [
 ];
 
 export const handlers = [
-  http.post('/id', async ({ request }) => {
+  http.post('/login-id', async ({ request }) => {
     const body = await request.json();
 
     const user = users.find(
@@ -18,7 +18,8 @@ export const handlers = [
       return HttpResponse.json({
         id: user.id,
         role: user.role,
+        page: user.page,
       });
-    return new HttpResponse('fake', { status: 400 });
+    return new HttpResponse('fake', { status: 502 });
   }),
 ];
