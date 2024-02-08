@@ -1,8 +1,5 @@
-import Navbar from '../components/NavBar';
-import Sidebar from '../components/Sidebar';
-
 function TodoPage() {
-  return <div className='TodoPage'>this page page</div>;
+  return <div className='TodoPage'>todo</div>;
 }
 
 export default TodoPage;
