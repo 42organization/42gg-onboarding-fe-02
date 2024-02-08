@@ -1,16 +1,11 @@
 import React from 'react';
 import '../css/Sidebar.css';
-import { Link } from 'react-router-dom';
+import IdDisplay from './IdDisplay';
 
 function Sidebar() {
   return (
     <div id='Sidebar'>
-      <ul>
-        <Link to={'todoPage'}>TodoPage</Link>
-        <li>Todo</li>
-        <li>Manage</li>
-        <li>Permission</li>
-      </ul>
+      <IdDisplay id='user-id' />
       <img src='../../favicon.ico' alt='placeholder' />
     </div>
   );
