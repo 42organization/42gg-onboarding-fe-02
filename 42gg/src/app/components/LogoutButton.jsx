@@ -10,5 +10,5 @@ export default function LogoutButton() {
     userReset();
     navigate('/');
   }
-  return <button onClick={logoutHandler}>logoutButton</button>;
+  return <button onClick={logoutHandler}>logout</button>;
 }
