@@ -10,7 +10,6 @@ export default Login;
 function Login() {
   const [user, setUser] = useRecoilState(userState);
   const navigate = useNavigate();
-  console.log(user);
   if (user.role !== '') navigate('/' + user.role);
 
   function handleSubmit(e) {
@@ -22,7 +21,6 @@ function Login() {
       .post('/login-id', { id, password })
       .then(({ data }) => {
         setUser({ id: data.id, role: data.role });
-        console.log('submit: ', user);
       })
       .catch((err) => {
         console.log(err);
