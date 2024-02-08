@@ -10,9 +10,9 @@ function AdminPage() {
   const navigate = useNavigate();
   useEffect(() => {
     if (role !== 'admin') navigate('/');
-  }, []);
+  }, [role]);
   return (
-    <div className='AdminPage'>
+    <div className='admin-page'>
       <Navbar />
       <Sidebar />
     </div>
