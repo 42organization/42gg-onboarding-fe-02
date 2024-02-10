@@ -5,7 +5,13 @@ export default function LogoutButton() {
   const userReset = useResetRecoilState(userState);
   const pageReset = useResetRecoilState(pageState);
   return (
-    <button className='LogoutButton' onClick={userReset}>
+    <button
+      className='LogoutButton'
+      onClick={() => {
+        userReset();
+        pageReset();
+      }}
+    >
       logout
     </button>
   );
