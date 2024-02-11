@@ -1,5 +1,4 @@
 import Login from '../components/Login.jsx';
-import '../css/HomePage.css';
 
 function HomePage() {
   return (

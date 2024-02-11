@@ -1,7 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/NavBar.jsx';
 import Sidebar from '../components/Sidebar.jsx';
-import '../css/HomePage.css';
 import TodoPage from './TodoPage.jsx';
 import { useRecoilValue } from 'recoil';
 import { userState } from '../../atom.jsx';
@@ -15,10 +14,14 @@ function NormalPage() {
   }, [role]);
 
   return (
-    <div className='admin-page'>
-      <Navbar />
-      <Sidebar />
-      <TodoPage />
+    <div className='normalPage'>
+      <div className='outlet'>
+        <Navbar />
+        <Sidebar />
+      </div>
+      <div className='viewPage'>
+        <TodoPage />
+      </div>
     </div>
   );
 }

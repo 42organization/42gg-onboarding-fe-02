@@ -1,14 +1,16 @@
-.Sidebar {
-  position: fixed;
-  width: 10%;
+#sidebar {
+  position: relative;
+  width: 15%;
+  min-height: 100%;
+  text-align: center;
+  background-color: rgba(250, 235, 215, 0.526);
 }
 
-.Sidebar img {
+img {
   position: inherit;
-  left: 0em;
-  height: auto;
-  bottom: 0em;
-  width: 20%;
+  bottom: 10%;
+  max-height: 100%;
+  max-width: 100%;
 }
 
 .Sidebar-header {

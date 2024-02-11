@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import TodoPage from './TodoPage';
 import DashboardPage from './DashboardPage';
 import PermissionPage from './PermissionPage';
+import '../css/viewPage.css';
 
 function showComponent(pageName) {
   switch (pageName) {
@@ -35,9 +36,8 @@ function AdminPage() {
       <div className='outlet'>
         <Navbar />
         <Sidebar />
-        {showComponent(page)}
       </div>
-      <div className='viewPage'>{}</div>
+      <div className='viewPage'>{showComponent(page)}</div>
     </div>
   );
 }

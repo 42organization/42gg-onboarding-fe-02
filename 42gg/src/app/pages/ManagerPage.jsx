@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import '../css/HomePage.css';
 
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { pageState, userState } from '../../atom.jsx';
@@ -26,14 +25,16 @@ function ManagerPage() {
 
   const navigate = useNavigate();
   useEffect(() => {
-    if (role === 'normal') navigate('/');
+    if (role !== 'manager') navigate('/');
   }, [role]);
 
   return (
-    <div className='admin-page'>
-      <Navbar />
-      <Sidebar />
-      {showComponent(page)}
+    <div className='managerPage'>
+      <div className='outlet'>
+        <Navbar />
+        <Sidebar />
+      </div>
+      <div className='viewPage'>{showComponent(page)}</div>
     </div>
   );
 }

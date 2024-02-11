@@ -4,7 +4,7 @@ import IdDisplay from './IdDisplay';
 
 function Sidebar() {
   return (
-    <div id='Sidebar'>
+    <div id='sidebar'>
       <IdDisplay id='user-id' />
       <img src='../../favicon.ico' alt='placeholder' />
     </div>
