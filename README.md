@@ -1,5 +1,26 @@
 # 42gg 프론트엔드 온보딩 2단계
 
+# Figma design
+https://www.figma.com/design/rk3Y72nAUvgWftEjkm9No4/42gg-onboarding-fe-02?m=dev&node-id=0-1&t=NEq0QwipRMChSLvz-1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## 공통 조건
 
 - 온보딩 프로젝트는 개인 계정으로 fork하여 진행하고 PR로 제출합니다.
