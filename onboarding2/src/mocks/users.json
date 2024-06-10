@@ -1,0 +1,23 @@
+[
+    {
+        "id": "1",
+        "username": "jaehyuki",
+        "userRole": "admin"
+    },
+    {
+        "id": "2",
+        "username": "tom",
+        "userRole": "manager"
+    },
+    {
+        "id": "3",
+        "username": "mark",
+        "userRole": "normal"
+    },
+    {
+        "id": "4",
+        "username": "naver",
+        "country": "us",
+        "userRole": "admin"
+    }
+]
