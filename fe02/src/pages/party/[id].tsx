@@ -1,10 +1,4 @@
-// import Nav from '@/components/Nav';
-import { Inter } from 'next/font/google';
-import Image from 'next/image';
-import Nav from '../../components/Nav';
 import partyStyle from '@/styles/partyroom.module.scss';
-
-const inter = Inter({ subsets: ['latin'] });
 
 //props id 들어오냐?
 export default function PartyRoom(props) {
