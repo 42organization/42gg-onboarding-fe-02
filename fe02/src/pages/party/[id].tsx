@@ -1,7 +1,7 @@
 // import Nav from '@/components/Nav';
 import { Inter } from 'next/font/google';
 import Image from 'next/image';
-import Nav from '../Nav';
+import Nav from '../../components/Nav';
 import partyStyle from '@/styles/partyroom.module.scss';
 
 const inter = Inter({ subsets: ['latin'] });
