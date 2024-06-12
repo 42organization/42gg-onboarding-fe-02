@@ -1,0 +1,24 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css';
+
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  background-color: #f9f7ca;
+}
+
+#app {
+  width: 390px;
+  height: 844px;
+  background: var(
+    --Linear,
+    linear-gradient(180deg, #f9f7ca 0%, #4ecdaf 73%, #999772 100%)
+  );
+  box-shadow: 0px 0px 10px rgba(50, 50, 50, 0.5);
+}
