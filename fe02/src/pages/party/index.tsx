@@ -1,4 +1,4 @@
-import styles from '../../styles/party/PartyRoom.module.scss';
+import styles from '@/styles/party/PartyRoom.module.scss';
 
 const PartyDetailPage = () => {
   return (
