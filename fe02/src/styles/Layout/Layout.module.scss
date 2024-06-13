@@ -1,0 +1,10 @@
+.appContainer {
+  display: flex;
+  flex-direction: column;
+  min-width: 940px;
+  min-height: 100vh;
+  background: var(
+    --Linear,
+    linear-gradient(180deg, #f9f7ca 0%, #4ecdaf 73%, #999772 100%)
+  );
+}
