@@ -16,7 +16,7 @@ export default function Nav() {
           src='/asset/myProfile.jpeg'
           width='24'
           height='24'
-          className='my-profile'
+          className={styles.myprofile}
           alt='myprofile-picture'
         ></Image>
       </Link>
