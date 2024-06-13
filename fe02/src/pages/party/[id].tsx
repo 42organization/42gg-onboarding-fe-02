@@ -1,12 +1,60 @@
 import Image from 'next/image';
+import axios, { AxiosResponse } from 'axios';
+import { useState } from 'react';
 import partyStyle from '@/styles/partyroom.module.scss';
 
 type typeProps = {
   id: string;
 };
 
+// type typeRoom = {
+//   roomId: number;
+//   title: string;
+//   content: string;
+//   categoryId: number;
+//   currentPeople: number;
+//   minPeople: number;
+//   maxPeople: number;
+//   status: enum;
+//   dueDate: Date;
+//   createDate: Date;
+//   myNickname: string | null;
+//   hostNickname: string;
+//   roomUsers: [
+//     {
+//       userRoomId: number;
+//       nickname: string;
+//       intraId: string | null;
+//       userImage: string | null;
+//     },
+//   ];
+//   comments: [
+//     {
+//       commentId: number;
+//       nickname: string;
+//       intraId: string | null;
+//       isExist: boolean;
+//       content: string;
+//       isHidden: boolean;
+//       createDate: Date;
+//     },
+//   ];
+// };
+
 //props id 들어오냐?
 export default function PartyRoom(props: typeProps) {
+  const [room, setRoom] = useState(null);
+  console.log(room);
+  axios
+    .get('/party/rooms/{room_id}')
+    .then((response: AxiosResponse) => {
+      console.log(response);
+      setRoom(response.data);
+    })
+    .catch((error: TypeError) => {
+      console.log(error);
+    });
+
   return (
     <div className={partyStyle.Partyroom}>
       <div className={partyStyle.info_container}>
@@ -132,5 +180,5 @@ export default function PartyRoom(props: typeProps) {
         {/* 여기까지 파티인포, 이후 채팅*/}
       </div>
     </div>
-  )
+  );
 }
