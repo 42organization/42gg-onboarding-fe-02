@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import axios, { AxiosResponse } from 'axios';
 import { useState } from 'react';
-import { server } from '@/mocks/node';
+import { server } from '@/mocks/server';
 import partyStyle from '@/styles/partyroom.module.scss';
 
 server.listen();

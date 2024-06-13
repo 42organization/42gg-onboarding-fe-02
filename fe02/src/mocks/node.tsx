@@ -1,5 +1,4 @@
 import { http, HttpResponse } from 'msw';
-import { setupServer } from 'msw/node';
 
 export const handlers = [
   // Intercept "GET https://example.com/user" requests...
@@ -75,5 +74,3 @@ export const handlers = [
     });
   }),
 ];
-
-export const server = setupServer(...handlers);
