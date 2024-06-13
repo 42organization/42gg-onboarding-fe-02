@@ -1,22 +1,144 @@
 .Partyroom {
   display: flex;
-  width: 352px;
+  width: calc(100% - 40px);
   flex-direction: column;
   align-items: center;
   gap: 8px;
   justify-content: center;
-  margin: 10px;
+  margin: 0 20px;
 }
-
-.container {
+.info_container {
   width: 100%;
   justify-content: center;
   align-items: center;
+  border-radius: 57px;
+  background-color: rgba(255, 254, 231, 0.45);
 }
 
 .info {
   border: 1px solid salmon;
+  display: flex;
+  padding: 20px 10px;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
   width: 100%;
-  padding: 10px;
-  margin: 10px;
+}
+
+.title {
+  width: 100%;
+  height: 125px;
+  position: static;
+  > h1 {
+    width: 100%;
+    height: 50px;
+    color: #000;
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%; /* 50.4px */
+    letter-spacing: -0.72px;
+  }
+  border-bottom: 1px solid black;
+}
+
+.share_icon {
+  position: relative;
+  top: 11px;
+  right: -265px;
+}
+
+.tag_container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 13px;
+}
+
+.tag {
+  display: flex;
+  padding: 0px 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  > p {
+    color: #fff;
+    text-align: center;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%; /* 18.2px */
+    letter-spacing: -0.26px;
+  }
+}
+
+.info_explain {
+  color: #5a5a5a;
+  text-align: center;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%; /* 25.2px */
+  letter-spacing: -0.36px;
+  white-space: pre;
+}
+
+.info_timelimit {
+  white-space: pre;
+  color: #000;
+  text-align: center;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%; /* 21px */
+  letter-spacing: -0.3px;
+}
+
+.profile_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile {
+  width: 77px;
+  height: 106px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.crown {
+  width: 13px;
+  height: 10px;
+  flex-shrink: 0;
+  margin-bottom: 3px;
+}
+
+.profile_pic {
+  flex-shrink: 0;
+  border-radius: 48px;
+}
+
+.profile_nickname {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  flex-shrink: 0;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%; /* 19.6px */
 }

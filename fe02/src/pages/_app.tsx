@@ -6,7 +6,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <div id='app'>
       <Nav />
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </div>
   );
 }
