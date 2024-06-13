@@ -1,7 +1,10 @@
 import Image from 'next/image';
 import axios, { AxiosResponse } from 'axios';
 import { useState } from 'react';
+import { server } from '@/mocks/node';
 import partyStyle from '@/styles/partyroom.module.scss';
+
+server.listen();
 
 type typeProps = {
   id: string;
@@ -44,9 +47,10 @@ type typeProps = {
 //props id 들어오냐?
 export default function PartyRoom(props: typeProps) {
   const [room, setRoom] = useState(null);
+  const room_id = 34;
   console.log(room);
   axios
-    .get('/party/rooms/{room_id}')
+    .get(`https://example.com/party/rooms/${room_id}`)
     .then((response: AxiosResponse) => {
       console.log(response);
       setRoom(response.data);
