@@ -12,6 +12,9 @@ const PartyRoomPage: NextPageWithLayout = () => {
           <RoomInfo.PartyRoomTitle />
           <RoomInfo.PartyRoomHashTag />
         </div>
+        <div className={styles.partyInfoDown}>
+          <RoomInfo.PartyRoomExplain />
+        </div>
         {/* commentBox */}
         {/* floatingBtn */}
       </div>

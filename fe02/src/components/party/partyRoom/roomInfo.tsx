@@ -21,4 +21,24 @@ const PartyRoomHashTag = () => {
   );
 };
 
-export const RoomInfo = { PartyRoomTitle, PartyRoomHashTag };
+const PartyRoomExplain = () => {
+  return (
+    <div className={styles.roomExplainContainer}>
+      <div className={styles.detailedTextBox}>
+        여기는 상세글 100자 이내 여기는 상세글 100자 이내 여기는 상세글 100자
+        이내 여기는 상세글 100자 이내 여기는 상세글 100자 이내 여기는 상세글
+        100자 이내 여기는 상세글 100자 이내 여기는 상세글 100자 이내 여기는
+        상세글 100자 이내 여기는 상세글 100자 이내 여기는 상세글 100자 이내
+        여기는 상세글 100자 이내 여기는 상세글 100자 이내 여기는 상세글 100자
+        이내 여기는 상세글 100자 이내 여기는 상세글 100자 이내 여기는 상세글
+        100자 이내 여기는 상세글 100자 이내 여기는 상세글 100자 이내
+      </div>
+      <div className={styles.deadlineBox}>
+        <div>마감일</div>
+        <div>2024.1.1 - 3:49</div>
+      </div>
+    </div>
+  );
+};
+
+export const RoomInfo = { PartyRoomTitle, PartyRoomHashTag, PartyRoomExplain };
