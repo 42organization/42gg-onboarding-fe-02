@@ -1,6 +1,25 @@
-$detail-btn-weight: bold;
+.partyRoomContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
 
-//
-.tmpBtn {
-  font-weight: $detail-btn-weight;
+.partyRoomWrap {
+  display: flex;
+  align-items: center;
+  width: 650px;
+  height: 800px;
+  flex-direction: column;
+  background: rgba(255, 254, 231, 0.45);
+  border-radius: 60px;
+  padding: 20px;
+}
+
+.partyInfoUp {
+  display: flex;
+  flex-direction: column;
+  width: 580px;
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
 }
