@@ -1,6 +1,6 @@
 import type { ReactElement } from 'react';
 import Layout from '@/components/Layout/Layout';
-import { RoomInfo } from '@/components/party/partyRoom/roomInfo';
+import { RoomInfo } from '@/components/party/partyRoom/PartyRoomInfo';
 import { NextPageWithLayout } from '@/pages/_app';
 import styles from '@/styles/party/PartyRoom.module.scss';
 
@@ -14,6 +14,7 @@ const PartyRoomPage: NextPageWithLayout = () => {
         </div>
         <div className={styles.partyInfoDown}>
           <RoomInfo.PartyRoomExplain />
+          <RoomInfo.PartyRoomMember />
         </div>
         {/* commentBox */}
         {/* floatingBtn */}

@@ -1,0 +1,39 @@
+.profileBox {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 80px;
+  height: 100px;
+  padding-top: 18px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.hostImage {
+  position: absolute;
+  top: 0;
+}
+
+.profileImage {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+
+  img {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.profileName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 25px;
+  overflow: visible;
+}
